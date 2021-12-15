@@ -1,13 +1,11 @@
 from pathlib import Path
 from tkinter import *
 
+# OUTPUT_PATH = Path(__file__).parent
+# ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
-
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path("./assets")
-
-def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+# def relative_to_assets(path: str) -> Path:
+#     return ASSETS_PATH / Path(path)
 
 window = Tk()
 window.title('Steam')
@@ -50,37 +48,49 @@ canvas.place(x = 0, y = 0)
 # button_image_1 = PhotoImage(
 #     file=relative_to_assets("button_1.png"))
 
-naamtxt = Label(window, 
-    text="Naam",
+appid = Label(window, 
+    text="appid",
     fg = "#212b5c",
     bg = "#fcc63f",
-    font = "Arial 48 bold",
+    font = "Arial 20 bold",
     anchor=E)
-naamtxt.place(
+appid.place(
+    x=200,
+    y=10.0,
+    width=250,
+    height=60)
+
+name = Label(window, 
+    text="name",
+    fg = "#212b5c",
+    bg = "#fcc63f",
+    font = "Arial 20 bold",
+    anchor=E)
+name.place(
     x=200.0,
     y=70.0,
     width=250,
     height=60)
 
-# naamnote = Label(window, 
-#     text="(optioneel)",
-#     fg = "#212b5c",
-#     bg = "#fcc63f",
-#     font = "Arial 20 bold",
-#     anchor=E)
-# naamnote.place(
-#     x=198.0,
-#     y=120.0,
-#     width=250,
-#     height=24)
-
-berichttxt = Label(window, 
-    text="Bericht",
+platforms = Label(window, 
+    text="platforms",
     fg = "#212b5c",
     bg = "#fcc63f",
-    font = "Arial 48 bold",
+    font = "Arial 20 bold",
     anchor=E)
-berichttxt.place(
+platforms.place(
+    x=200,
+    y=130.0,
+    width=250,
+    height=24)
+
+required_age = Label(window, 
+    text="required_age",
+    fg = "#212b5c",
+    bg = "#fcc63f",
+    font = "Arial 20 bold",
+    anchor=E)
+required_age.place(
     x=200.0,
     y=180.0,
     width=250,
@@ -111,5 +121,4 @@ berichttxt.place(
 #     width=600.0,
 #     height=490.0
 # )
-
-gui.window.mainloop()
+window.mainloop()
