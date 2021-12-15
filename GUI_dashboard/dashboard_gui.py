@@ -1,5 +1,6 @@
 from pathlib import Path
 from tkinter import *
+# ws = Tk()
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -8,9 +9,16 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 window = Tk()
-window.title('Steam')
+window.title('Steam Dashboard')
 window.geometry("1280x720")
 window.configure(bg = "#2a475e")
+
+# img = PhotoImage(relative_to_assets("steam_background.png"))
+# label = Label(
+#     ws,
+#     image=img
+# )
+# label.place(x=0, y=0)
 
 canvas = Canvas(
     window,
@@ -38,20 +46,20 @@ canvas.place(x = 0, y = 0)
 
 
 image_image_3 = PhotoImage(
-    file=relative_to_assets("steam-icon-14883.png"))
+    file=relative_to_assets("steam_resize.png"))
 image_3 = canvas.create_image(
-    240.0,
-    360.0,
+    60.0,
+    60.0,
     image=image_image_3
 )
 
-button_image_1 = PhotoImage(
-    file=relative_to_assets("button_1.png"))
+# button_image_1 = PhotoImage(
+#     file=relative_to_assets("button_1.png"))
 
 appid = Label(window, 
     text="appid",
     fg = "#c7d5e0",
-    bg = "#fcc63f",
+    bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
 appid.place(
@@ -63,7 +71,7 @@ appid.place(
 name = Label(window, 
     text="name",
     fg = "#c7d5e0",
-    bg = "#fcc63f",
+    bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
 name.place(
@@ -75,19 +83,19 @@ name.place(
 platforms = Label(window, 
     text="platforms",
     fg = "#c7d5e0",
-    bg = "#fcc63f",
+    bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
 platforms.place(
     x=200,
     y=130.0,
     width=250,
-    height=24)
+    height=60)
 
 required_age = Label(window, 
     text="required_age",
     fg = "#c7d5e0",
-    bg = "#fcc63f",
+    bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
 required_age.place(
