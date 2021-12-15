@@ -1,6 +1,6 @@
 from pathlib import Path
 from tkinter import *
-# ws = Tk()
+
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -11,26 +11,31 @@ def relative_to_assets(path: str) -> Path:
 window = Tk()
 window.title('Steam Dashboard')
 window.geometry("1280x720")
-window.configure(bg = "#2a475e")
+# window.configure(bg = "#2a475e")
 
-# img = PhotoImage(relative_to_assets("steam_background.png"))
-# label = Label(
-#     ws,
-#     image=img
-# )
-# label.place(x=0, y=0)
+
+
+
+
 
 canvas = Canvas(
     window,
-    bg = "#FFFFFF",
+    bg = "#2a475e",
     height = 720,
     width = 1280,
     bd = 0,
     highlightthickness = 0,
-    relief = "ridge"
-)
+    relief = "ridge",
+    )
 
 canvas.place(x = 0, y = 0)
+
+img = PhotoImage(file=relative_to_assets("page_bg_generated_v6b.png")),
+steam_background = canvas.create_image(
+    600.0,
+    400.0,
+    image=img
+)
 
 # def pop_up(timer, message):
 #     pop_up = Toplevel(window)
