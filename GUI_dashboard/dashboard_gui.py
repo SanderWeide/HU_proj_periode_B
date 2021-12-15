@@ -14,10 +14,6 @@ window.geometry("1280x720")
 # window.configure(bg = "#2a475e")
 
 
-
-
-
-
 canvas = Canvas(
     window,
     bg = "#2a475e",
@@ -37,18 +33,6 @@ steam_background = canvas.create_image(
     image=img
 )
 
-# def pop_up(timer, message):
-#     pop_up = Toplevel(window)
-#     pop_up.geometry("650x70")
-#     pop_up.configure(bg = "#fcc63f")
-#     pop_up.resizable(False, False)
-#     Label(pop_up, 
-#     text=message,
-#     fg = "#212b5c",
-#     bg = "#fcc63f",
-#     font = "Arial 26 bold").pack(pady=10)
-#     pop_up.after(timer, lambda: pop_up.destroy())
-
 
 steamlogo = PhotoImage(
     file=relative_to_assets("steam_resize.png"))
@@ -57,9 +41,6 @@ steam_logo = canvas.create_image(
     60.0,
     image=steamlogo
 )
-
-# button_image_1 = PhotoImage(
-#     file=relative_to_assets("button_1.png"))
 
 appid = Label(window, 
     text="appid",
