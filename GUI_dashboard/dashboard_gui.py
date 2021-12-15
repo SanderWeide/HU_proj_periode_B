@@ -1,16 +1,16 @@
 from pathlib import Path
 from tkinter import *
 
-# OUTPUT_PATH = Path(__file__).parent
-# ASSETS_PATH = OUTPUT_PATH / Path("./assets")
+OUTPUT_PATH = Path(__file__).parent
+ASSETS_PATH = OUTPUT_PATH / Path("./assets")
 
-# def relative_to_assets(path: str) -> Path:
-#     return ASSETS_PATH / Path(path)
+def relative_to_assets(path: str) -> Path:
+    return ASSETS_PATH / Path(path)
 
 window = Tk()
 window.title('Steam')
 window.geometry("1280x720")
-window.configure(bg = "#FFFFFF")
+window.configure(bg = "#2a475e")
 
 canvas = Canvas(
     window,
@@ -37,20 +37,20 @@ canvas.place(x = 0, y = 0)
 #     pop_up.after(timer, lambda: pop_up.destroy())
 
 
-# image_image_3 = PhotoImage(
-#     file=relative_to_assets("image_3.png"))
-# image_3 = canvas.create_image(
-#     240.0,
-#     360.0,
-#     image=image_image_3
-# )
+image_image_3 = PhotoImage(
+    file=relative_to_assets("steam-icon-14883.png"))
+image_3 = canvas.create_image(
+    240.0,
+    360.0,
+    image=image_image_3
+)
 
-# button_image_1 = PhotoImage(
-#     file=relative_to_assets("button_1.png"))
+button_image_1 = PhotoImage(
+    file=relative_to_assets("button_1.png"))
 
 appid = Label(window, 
     text="appid",
-    fg = "#212b5c",
+    fg = "#c7d5e0",
     bg = "#fcc63f",
     font = "Arial 20 bold",
     anchor=E)
@@ -62,7 +62,7 @@ appid.place(
 
 name = Label(window, 
     text="name",
-    fg = "#212b5c",
+    fg = "#c7d5e0",
     bg = "#fcc63f",
     font = "Arial 20 bold",
     anchor=E)
@@ -74,7 +74,7 @@ name.place(
 
 platforms = Label(window, 
     text="platforms",
-    fg = "#212b5c",
+    fg = "#c7d5e0",
     bg = "#fcc63f",
     font = "Arial 20 bold",
     anchor=E)
@@ -86,7 +86,7 @@ platforms.place(
 
 required_age = Label(window, 
     text="required_age",
-    fg = "#212b5c",
+    fg = "#c7d5e0",
     bg = "#fcc63f",
     font = "Arial 20 bold",
     anchor=E)
