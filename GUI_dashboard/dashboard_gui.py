@@ -45,12 +45,12 @@ canvas.place(x = 0, y = 0)
 #     pop_up.after(timer, lambda: pop_up.destroy())
 
 
-image_image_3 = PhotoImage(
+steamlogo = PhotoImage(
     file=relative_to_assets("steam_resize.png"))
-image_3 = canvas.create_image(
+steam_logo = canvas.create_image(
     60.0,
     60.0,
-    image=image_image_3
+    image=steamlogo
 )
 
 # button_image_1 = PhotoImage(
