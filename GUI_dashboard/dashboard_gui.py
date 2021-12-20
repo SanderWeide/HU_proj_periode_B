@@ -42,77 +42,97 @@ steam_logo = canvas.create_image(
     image=steamlogo
 )
 
-appid = Label(window, 
-    text="appid",
+label_appid = Label(window, 
+    text="app id:",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
-appid.place(
+label_appid.place(
     x=200,
     y=10.0,
     width=250,
     height=60)
 
-name = Label(window, 
-    text="name",
+data_appid = Label(window, 
+    text="**app id data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_appid.place(
+    x=450,
+    y=10.0,
+    width=350,
+    height=60)
+
+label_name = Label(window, 
+    text="name:",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
-name.place(
+label_name.place(
     x=200.0,
     y=70.0,
     width=250,
     height=60)
 
-platforms = Label(window, 
-    text="platforms",
+data_name = Label(window, 
+    text="**name data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_name.place(
+    x=450.0,
+    y=70.0,
+    width=350,
+    height=60)
+
+label_platforms = Label(window, 
+    text="platforms:",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
-platforms.place(
+label_platforms.place(
     x=200,
     y=130.0,
     width=250,
     height=60)
 
-required_age = Label(window, 
-    text="required_age",
+data_platforms = Label(window, 
+    text="**platforms data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_platforms.place(
+    x=450,
+    y=130.0,
+    width=350,
+    height=60)
+
+label_required_age = Label(window, 
+    text="required age:",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 20 bold",
     anchor=E)
-required_age.place(
+label_required_age.place(
     x=200.0,
     y=180.0,
     width=250,
     height=60)
 
-# input_name = Text(
-#     fg = "#212b5c",
-#     bg = "white",
-#     font = "Arial 36",
-#     insertbackground="#212b5c")
-# input_name.place(
-#     x=530.0,
-#     y=70.0,
-#     width=700.0,
-#     height=58.0
-# )
+data_required_age = Label(window, 
+    text="**required age data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_required_age.place(
+    x=450.0,
+    y=180.0,
+    width=350,
+    height=60)
 
-# input_message = Text(
-#     fg = "#212b5c",
-#     bg = "white",
-#     font = "Arial 24",
-#     wrap='word',
-#     insertbackground="#212b5c"
-# )
-# input_message.place(
-#     x=530.0,
-#     y=180.0,
-#     width=600.0,
-#     height=490.0
-# )
-window.mainloop()
+
+# window.mainloop()
