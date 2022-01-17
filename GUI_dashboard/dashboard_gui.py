@@ -134,16 +134,55 @@ data_required_age.place(
     width=350,
     height=60)
 
-data_positive_ratings = Label(window, 
-    text="**positive_ratings data field**",
+#most positive
+label_most_positive_ratings = Label(window, 
+    text="highest ratings:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold",
+    anchor=E)
+label_most_positive_ratings.place(
+    x=200.0,
+    y=230.0,
+    width=250,
+    height=60)
+
+data_most_positive_ratings = Label(window, 
+    text="**most_positive_ratings data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 20 bold")
-data_positive_ratings.place(
+data_most_positive_ratings.place(
     x=450.0,
     y=230.0,
     width=350,
     height=60)
 
+#ratio
 
-# window.mainloop()
+label_review_ratio = Label(window, 
+    text="best review ratio:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold",
+    anchor=E)
+label_review_ratio.place(
+    x=200.0,
+    y=280.0,
+    width=250,
+    height=60)
+
+
+data_review_ratio = Label(window, 
+    text="**review_ratio data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_review_ratio.place(
+    x=450.0,
+    y=280.0,
+    width=350,
+    height=60)
+
+
+#window.mainloop()

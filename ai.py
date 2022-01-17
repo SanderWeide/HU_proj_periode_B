@@ -15,8 +15,6 @@ posRateSum = 0
 for i in selectie:
     posRateSum += i[1]
 
-print(posRateSum / len(selectie))
-
 
 def most_positive_reviews():
     most_positives = 0
@@ -46,7 +44,6 @@ def review_ratio():
             game_name = i["name"]
     return game_name, ratio
 
-    
-print()
+
 # print(least_positive_reviews())
 print(review_ratio())
