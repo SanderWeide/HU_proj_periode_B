@@ -47,6 +47,6 @@ def review_ratio():
     return game_name, ratio
 
     
-
+print()
 # print(least_positive_reviews())
 print(review_ratio())
