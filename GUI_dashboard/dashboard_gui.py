@@ -134,5 +134,16 @@ data_required_age.place(
     width=350,
     height=60)
 
+data_positive_ratings = Label(window, 
+    text="**positive_ratings data field**",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 20 bold")
+data_positive_ratings.place(
+    x=450.0,
+    y=230.0,
+    width=350,
+    height=60)
+
 
 # window.mainloop()
