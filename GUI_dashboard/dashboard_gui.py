@@ -46,7 +46,7 @@ label_appid = Label(window,
     text="app id:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_appid.place(
     x=200,
@@ -58,7 +58,7 @@ data_appid = Label(window,
     text="**app id data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_appid.place(
     x=450,
     y=10.0,
@@ -69,7 +69,7 @@ label_name = Label(window,
     text="name:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_name.place(
     x=200.0,
@@ -81,7 +81,7 @@ data_name = Label(window,
     text="**name data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_name.place(
     x=450.0,
     y=70.0,
@@ -92,7 +92,7 @@ label_platforms = Label(window,
     text="platforms:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_platforms.place(
     x=200,
@@ -104,7 +104,7 @@ data_platforms = Label(window,
     text="**platforms data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_platforms.place(
     x=450,
     y=130.0,
@@ -115,7 +115,7 @@ label_required_age = Label(window,
     text="required age:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_required_age.place(
     x=200.0,
@@ -127,7 +127,7 @@ data_required_age = Label(window,
     text="**required age data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_required_age.place(
     x=450.0,
     y=180.0,
@@ -139,7 +139,7 @@ label_most_positive_ratings = Label(window,
     text="highest ratings:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_most_positive_ratings.place(
     x=200.0,
@@ -151,7 +151,7 @@ data_most_positive_ratings = Label(window,
     text="**most_positive_ratings data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_most_positive_ratings.place(
     x=450.0,
     y=230.0,
@@ -164,7 +164,7 @@ label_review_ratio = Label(window,
     text="best review ratio:",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold",
+    font = "Arial 12 bold",
     anchor=E)
 label_review_ratio.place(
     x=200.0,
@@ -177,7 +177,7 @@ data_review_ratio = Label(window,
     text="**review_ratio data field**",
     fg = "#c7d5e0",
     bg = "#1b2838",
-    font = "Arial 20 bold")
+    font = "Arial 12 bold")
 data_review_ratio.place(
     x=450.0,
     y=280.0,

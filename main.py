@@ -1,7 +1,7 @@
 from GUI_dashboard import dashboard_gui
-import json, threading, time
+import json, threading, time, random
 import ai
-import random
+
 
 
 random.seed()	
@@ -19,7 +19,5 @@ def start_gui():
         dashboard_gui.data_review_ratio.config(text=ai.review_ratio())
 
 start_gui()
-
-
 dashboard_gui.window.mainloop()
 
