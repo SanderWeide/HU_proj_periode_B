@@ -1,6 +1,12 @@
 from pathlib import Path
 from tkinter import *
 
+variableHeight = 50
+relativeYPost = 50
+YTopMargin = 10
+
+# variableHeight voor de hoogte van de items
+# relativeYPost*0+YTopMargin voor y positie, pas de 0 aan naar het hoeveelste item het is
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path("./assets")
@@ -42,6 +48,7 @@ steam_logo = canvas.create_image(
     image=steamlogo
 )
 
+# appid
 label_appid = Label(window, 
     text="app id:",
     fg = "#c7d5e0",
@@ -50,9 +57,9 @@ label_appid = Label(window,
     anchor=E)
 label_appid.place(
     x=200,
-    y=10.0,
+    y=relativeYPost*0+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 data_appid = Label(window, 
     text="**app id data field**",
@@ -61,10 +68,11 @@ data_appid = Label(window,
     font = "Arial 12 bold")
 data_appid.place(
     x=450,
-    y=10.0,
+    y=relativeYPost*0+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
+# name
 label_name = Label(window, 
     text="name:",
     fg = "#c7d5e0",
@@ -73,9 +81,9 @@ label_name = Label(window,
     anchor=E)
 label_name.place(
     x=200.0,
-    y=70.0,
+    y=relativeYPost*1+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 data_name = Label(window, 
     text="**name data field**",
@@ -84,10 +92,11 @@ data_name = Label(window,
     font = "Arial 12 bold")
 data_name.place(
     x=450.0,
-    y=70.0,
+    y=relativeYPost*1+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
+# platforms
 label_platforms = Label(window, 
     text="platforms:",
     fg = "#c7d5e0",
@@ -96,9 +105,9 @@ label_platforms = Label(window,
     anchor=E)
 label_platforms.place(
     x=200,
-    y=130.0,
+    y=relativeYPost*2+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 data_platforms = Label(window, 
     text="**platforms data field**",
@@ -107,10 +116,11 @@ data_platforms = Label(window,
     font = "Arial 12 bold")
 data_platforms.place(
     x=450,
-    y=130.0,
+    y=relativeYPost*2+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
+# required age
 label_required_age = Label(window, 
     text="required age:",
     fg = "#c7d5e0",
@@ -119,9 +129,9 @@ label_required_age = Label(window,
     anchor=E)
 label_required_age.place(
     x=200.0,
-    y=180.0,
+    y=relativeYPost*3+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 data_required_age = Label(window, 
     text="**required age data field**",
@@ -130,9 +140,9 @@ data_required_age = Label(window,
     font = "Arial 12 bold")
 data_required_age.place(
     x=450.0,
-    y=180.0,
+    y=relativeYPost*3+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
 #most positive
 label_most_positive_ratings = Label(window, 
@@ -143,9 +153,9 @@ label_most_positive_ratings = Label(window,
     anchor=E)
 label_most_positive_ratings.place(
     x=200.0,
-    y=230.0,
+    y=relativeYPost*4+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 data_most_positive_ratings = Label(window, 
     text="**most_positive_ratings data field**",
@@ -154,9 +164,9 @@ data_most_positive_ratings = Label(window,
     font = "Arial 12 bold")
 data_most_positive_ratings.place(
     x=450.0,
-    y=230.0,
+    y=relativeYPost*4+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
 #ratio
 
@@ -168,9 +178,9 @@ label_review_ratio = Label(window,
     anchor=E)
 label_review_ratio.place(
     x=200.0,
-    y=280.0,
+    y=relativeYPost*5+YTopMargin,
     width=250,
-    height=60)
+    height=variableHeight)
 
 
 data_review_ratio = Label(window, 
@@ -180,9 +190,9 @@ data_review_ratio = Label(window,
     font = "Arial 12 bold")
 data_review_ratio.place(
     x=450.0,
-    y=280.0,
+    y=relativeYPost*5+YTopMargin,
     width=350,
-    height=60)
+    height=variableHeight)
 
 
 #window.mainloop()
