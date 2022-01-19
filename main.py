@@ -1,11 +1,6 @@
 from GUI_dashboard import dashboard_gui
-import json, threading, time, random
-import ai
-
-
-
-random.seed()	
-game = random.randrange(0,300)
+import json, threading, time, random, ai
+random.seed()
 
 def start_gui(game):
         data = json.load(open("steam.json"))
@@ -17,6 +12,6 @@ def start_gui(game):
         dashboard_gui.data_most_positive_ratings.config(text=ai.most_positive_reviews())
         dashboard_gui.data_review_ratio.config(text=ai.review_ratio())
 
-start_gui(game)
+start_gui(random.randrange(0,300))
 dashboard_gui.window.mainloop()
 
