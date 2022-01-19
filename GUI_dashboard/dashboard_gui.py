@@ -3,7 +3,7 @@ from tkinter import *
 
 variableHeight = 50
 relativeYPost = 50
-YTopMargin = 10
+YTopMargin = 65
 
 # variableHeight voor de hoogte van de items
 # relativeYPost*0+YTopMargin voor y positie, pas de 0 aan naar het hoeveelste item het is
@@ -34,8 +34,8 @@ canvas.place(x = 0, y = 0)
 
 img = PhotoImage(file=relative_to_assets("page_bg_generated_v6b.png")),
 steam_background = canvas.create_image(
-    600.0,
-    400.0,
+    600,
+    400,
     image=img
 )
 
@@ -43,10 +43,29 @@ steam_background = canvas.create_image(
 steamlogo = PhotoImage(
     file=relative_to_assets("steam_resize.png"))
 steam_logo = canvas.create_image(
-    60.0,
-    60.0,
+    60,
+    60,
     image=steamlogo
 )
+
+# searchbox
+searchBox = Text(window,
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12")
+searchBox.place(
+    x=200,
+    y=25,
+    width=540,
+    height=25)
+
+searchButton = Button (window, text="Zoeken")
+
+searchButton.place(
+    x=740,
+    y=25,
+    width=60,
+    height=25)
 
 # appid
 label_appid = Label(window, 
@@ -80,7 +99,7 @@ label_name = Label(window,
     font = "Arial 12 bold",
     anchor=E)
 label_name.place(
-    x=200.0,
+    x=200,
     y=relativeYPost*1+YTopMargin,
     width=250,
     height=variableHeight)
@@ -91,7 +110,7 @@ data_name = Label(window,
     bg = "#1b2838",
     font = "Arial 12 bold")
 data_name.place(
-    x=450.0,
+    x=450,
     y=relativeYPost*1+YTopMargin,
     width=350,
     height=variableHeight)
@@ -128,7 +147,7 @@ label_required_age = Label(window,
     font = "Arial 12 bold",
     anchor=E)
 label_required_age.place(
-    x=200.0,
+    x=200,
     y=relativeYPost*3+YTopMargin,
     width=250,
     height=variableHeight)
@@ -139,7 +158,7 @@ data_required_age = Label(window,
     bg = "#1b2838",
     font = "Arial 12 bold")
 data_required_age.place(
-    x=450.0,
+    x=450,
     y=relativeYPost*3+YTopMargin,
     width=350,
     height=variableHeight)
@@ -152,7 +171,7 @@ label_most_positive_ratings = Label(window,
     font = "Arial 12 bold",
     anchor=E)
 label_most_positive_ratings.place(
-    x=200.0,
+    x=200,
     y=relativeYPost*4+YTopMargin,
     width=250,
     height=variableHeight)
@@ -163,7 +182,7 @@ data_most_positive_ratings = Label(window,
     bg = "#1b2838",
     font = "Arial 12 bold")
 data_most_positive_ratings.place(
-    x=450.0,
+    x=450,
     y=relativeYPost*4+YTopMargin,
     width=350,
     height=variableHeight)
@@ -177,7 +196,7 @@ label_review_ratio = Label(window,
     font = "Arial 12 bold",
     anchor=E)
 label_review_ratio.place(
-    x=200.0,
+    x=200,
     y=relativeYPost*5+YTopMargin,
     width=250,
     height=variableHeight)
@@ -189,10 +208,10 @@ data_review_ratio = Label(window,
     bg = "#1b2838",
     font = "Arial 12 bold")
 data_review_ratio.place(
-    x=450.0,
+    x=450,
     y=relativeYPost*5+YTopMargin,
     width=350,
     height=variableHeight)
 
 
-#window.mainloop()
+# window.mainloop()

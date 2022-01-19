@@ -6,9 +6,8 @@ import ai
 
 random.seed()	
 game = random.randrange(0,300)
-print(game)
 
-def start_gui():
+def start_gui(game):
         data = json.load(open("steam.json"))
         print(data[0])
         dashboard_gui.data_appid.config(text=data[game]['appid'])
@@ -18,6 +17,6 @@ def start_gui():
         dashboard_gui.data_most_positive_ratings.config(text=ai.most_positive_reviews())
         dashboard_gui.data_review_ratio.config(text=ai.review_ratio())
 
-start_gui()
+start_gui(game)
 dashboard_gui.window.mainloop()
 
