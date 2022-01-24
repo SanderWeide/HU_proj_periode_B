@@ -1,6 +1,5 @@
 from pathlib import Path
 from tkinter import *
-from tkinter import ttk
 
 variableHeight = 50
 relativeYPost = 50
@@ -68,8 +67,20 @@ searchButton.place(
     width=60,
     height=25)
 
-def selectiemenu_setup():
-    mylabel = Label(window, text=selectiemenu.get()).pack
+def filter_selectie(options):
+    global value_option_menu
+    global modnaam
+
+    value_option_menu = StringVar(window)
+    value_option_menu.set(options[0]) # default value
+    
+    filter_selection_menu = OptionMenu(window, value_option_menu, *options,)
+    filter_selection_menu.place(
+        x=850.0,
+        y=25.0,
+        width=160,
+        height=25
+    )
 
 options = [
     'Datum (nieuw - oud)',
@@ -77,14 +88,7 @@ options = [
     'Prijs (oplopend)',
     'Prijs (aflopend)']
 
-selectiemenu = ttk.Combobox(window, value= options)
-selectiemenu.current(0)
-selectiemenu.bind("<<Selectiemenukeuze>>", selectiemenu_setup)
-selectiemenu.place(
-        x=850.0,
-        y=25.0,
-        width=160,
-        height=25 )
+filter_selectie(options)
 
 
 # appid
