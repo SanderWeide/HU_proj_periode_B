@@ -66,7 +66,7 @@ api_key = 'jouw-key-hier'
 # Je krijgt dan een error response met een code als 401 of 403. 
 # Geef dan een API-key mee in je parameters.
 parameters = {
-    'key': api_key,
+    'key': "EC890957993F2D5036E82EFF1DD40882",
     'appid': 440
 }
 
