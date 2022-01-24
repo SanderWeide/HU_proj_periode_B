@@ -67,6 +67,7 @@ searchButton.place(
     width=60,
     height=25)
 
+# selectie menu sorteer opties
 def filter_selectie(options):
     global value_option_menu
     global modnaam
@@ -83,13 +84,76 @@ def filter_selectie(options):
     )
 
 options = [
-    'Datum (nieuw - oud)',
-    'Datum (oud - nieuw)',
-    'Prijs (oplopend)',
-    'Prijs (aflopend)']
+    'Date  (new -old)',
+    'Date  (old - new)',
+    'Price (ascending)',
+    'Price (descending)']
 
 filter_selectie(options)
 
+#Filter apply knop
+label_filter_apply = Label(window, 
+    text="Apply Filter",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
+label_filter_apply.place(x=20.0,y=120.0,width=160,height=25)
+
+
+#Price options
+label_filter_apply = Label(window, 
+    text="Game category",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
+label_filter_apply.place(x=20.0,y=155.0,width=160,height=25)
+
+# filter opties
+Free_to_Play_option = IntVar()
+Checkbutton(window, text="Free to Play", variable=Free_to_Play_option).place(x=20.0,y=180.0,width=160,height=25)
+Early_Access_option = IntVar()
+Checkbutton(window, text="Early Access", variable=Early_Access_option).place(x=20.0,y=200.0,width=160,height=25)
+action_option = IntVar()
+Checkbutton(window, text="Action", variable=action_option).place(x=20.0,y=220.0,width=160,height=25)
+Advanture_option = IntVar()
+Checkbutton(window, text="Advanture", variable=Advanture_option).place(x=20.0,y=240.0,width=160,height=25)
+Casual_option = IntVar()
+Checkbutton(window, text="Casual", variable=Casual_option).place(x=20.0,y=260.0,width=160,height=25)
+Indie_option = IntVar()
+Checkbutton(window, text="Indie", variable=Indie_option).place(x=20.0,y=280.0,width=160,height=25)
+Massively_Multiplayer_option = IntVar()
+Checkbutton(window, text="Massively Multiplayer", variable=Massively_Multiplayer_option).place(x=20.0,y=300.0,width=160,height=25)
+Racing_option = IntVar()
+Checkbutton(window, text="Racing", variable=Racing_option).place(x=20.0,y=320.0,width=160,height=25)
+RPG_option = IntVar()
+Checkbutton(window, text="RPG", variable=RPG_option).place(x=20.0,y=340.0,width=160,height=25)
+Simulation_option = IntVar()
+Checkbutton(window, text="Simulation", variable=Simulation_option).place(x=20.0,y=360.0,width=160,height=25)
+Sports_option = IntVar()
+Checkbutton(window, text="Sports", variable=Sports_option).place(x=20.0,y=380.0,width=160,height=25)
+Strategy_option = IntVar()
+Checkbutton(window, text="Strategy", variable=Strategy_option).place(x=20.0,y=400.0,width=160,height=25)
+
+#Price options
+label_filter_apply = Label(window, 
+    text="Price category",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
+label_filter_apply.place(x=20.0,y=435.0,width=160,height=25)
+
+#Prijs filters
+Games_under_5_option = IntVar()
+Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
+Games_under_10_option = IntVar()
+Checkbutton(window, text="Games under €10 ", variable=Games_under_10_option).place(x=20.0,y=480.0,width=160,height=25)
+Games_under_20_option = IntVar()
+Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
+Games_over_40_option = IntVar()
+Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
 
 # appid
 # label_appid = Label(window, 
