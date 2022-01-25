@@ -104,14 +104,14 @@ label_filter_apply.place(x=20.0,y=120.0,width=160,height=25)
 
 #Price options
 label_filter_apply = Label(window, 
-    text="Game category",
+    text="Game genres",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold",
     anchor=E)
 label_filter_apply.place(x=20.0,y=155.0,width=160,height=25)
 
-# filter opties
+# filter genres
 Free_to_Play_option = IntVar()
 Checkbutton(window, text="Free to Play", variable=Free_to_Play_option).place(x=20.0,y=180.0,width=160,height=25)
 Early_Access_option = IntVar()
@@ -156,15 +156,15 @@ Checkbutton(window, text="Games under €20", variable=Games_under_20_option).pl
 Games_over_40_option = IntVar()
 Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
 
-#data veld
-json_filename = 'test.json'
+# #data veld
+# json_filename = 'test.json'
 
-with open(json_filename, 'r') as inside:
-    data = json.load(inside)
+# with open(json_filename, 'r') as inside:
+#     data = json.load(inside)
 
-data_field = Text(window, state='normal', height=35, width=120)
-data_field.place(x=200, y=100)
-data_field.insert('1.0', str(data))
+# data_field = Text(window, state='normal', height=35, width=120)
+# data_field.place(x=200, y=100)
+# data_field.insert('1.0', str(data))
 
 
 # appid
@@ -180,29 +180,31 @@ data_field.insert('1.0', str(data))
 #     width=250,
 #     height=variableHeight)
 
-# data_appid = Label(window, 
-#     text="**app id data field**",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_appid.place(
-#     x=450,
-#     y=relativeYPost*0+YTopMargin,
-#     width=350,
-#     height=variableHeight)
+for i in range(0,5):
+    data_appid = Label(window, 
+        text="**app id data field**",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    data_appid.place(
+        x=450,
+        y=relativeYPost*(0+i)+YTopMargin,
+        width=350,
+        height=variableHeight)
 
-# # name
-# label_name = Label(window, 
-#     text="name:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_name.place(
-#     x=200,
-#     y=relativeYPost*1+YTopMargin,
-#     width=250,
-#     height=variableHeight)
+# name
+for i in range(0,5):
+    label_name = Label(window, 
+        text="name:",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        anchor=E)
+    label_name.place(
+        x=200,
+        y=relativeYPost*(1+i)+YTopMargin,
+        width=250,
+        height=variableHeight)
 
 # data_name = Label(window, 
 #     text="**name data field**",
