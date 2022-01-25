@@ -12,6 +12,6 @@ def start_gui(game):
         dashboard_gui.data_most_positive_ratings.config(text=ai.most_positive_reviews())
         dashboard_gui.data_review_ratio.config(text=ai.review_ratio())
 
-start_gui(random.randrange(0,300))
+# start_gui(random.randrange(0,300))
 dashboard_gui.window.mainloop()
 

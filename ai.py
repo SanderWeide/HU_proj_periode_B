@@ -43,7 +43,3 @@ def review_ratio():
             ratio = i["positive_ratings"] / i["negative_ratings"]
             game_name = i["name"]
     return game_name, ratio
-
-
-# print(least_positive_reviews())
-print(review_ratio())

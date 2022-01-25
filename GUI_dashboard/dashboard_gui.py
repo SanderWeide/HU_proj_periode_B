@@ -304,4 +304,4 @@ Checkbutton(window, text="Games over €40", variable=Games_over_40_option).plac
 # 2e scherm AI statistiek
 
 
-window.mainloop()
+# window.mainloop()
