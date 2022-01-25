@@ -1,5 +1,6 @@
 from pathlib import Path
 from tkinter import *
+import json
 
 variableHeight = 50
 relativeYPost = 50
@@ -154,6 +155,17 @@ Games_under_20_option = IntVar()
 Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
 Games_over_40_option = IntVar()
 Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
+
+#data veld
+json_filename = 'test.json'
+
+with open(json_filename, 'r') as inside:
+    data = json.load(inside)
+
+data_field = Text(window, state='normal', height=35, width=120)
+data_field.place(x=200, y=100)
+data_field.insert('1.0', str(data))
+
 
 # appid
 # label_appid = Label(window, 
