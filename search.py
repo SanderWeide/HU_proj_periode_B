@@ -40,4 +40,20 @@ def search(active_filters):
         if "Strategy" in active_filters:
             if "Strategy" not in i["genres"]:
                 continue
+        if "under5" in active_filters:
+            if i["price"] > 5:
+                continue
+        if "under10" in active_filters:
+            if i["price"] > 10:
+                continue
+        if "under20" in active_filters:
+            if i["price"] > 20:
+                continue
+        if "under40" in active_filters:
+            if i["price"] > 40:
+                continue
+        if "over40" in active_filters:
+            if i["price"] <= 40:
+                continue
         temp.append(i)
+    print(len(temp))

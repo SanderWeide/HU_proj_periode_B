@@ -6,17 +6,7 @@ random.seed()
 def game_genres_filter():
     active_filters = []
     price_range = dashboard_gui.value_price_menu.get()
-    # price filter
-    if price_range == "Games under €5":
-        active_filters.append("under5")
-    if price_range == "Games under €10":
-        active_filters.append("under10")
-    if price_range == "Games under €20":
-        active_filters.append("under20")
-    if price_range == "Games under €40":
-        active_filters.append("under40")
-    if price_range == "Games over €40":
-        active_filters.append("over40")
+   
     
     #catagory filter
     if dashboard_gui.Free_to_Play_option.get():
@@ -43,6 +33,18 @@ def game_genres_filter():
         active_filters.append("Sports")
     if dashboard_gui.Strategy_option.get():
         active_filters.append("Strategy")
+     # price filter
+    if price_range == "Games under €5":
+        active_filters.append("under5")
+    if price_range == "Games under €10":
+        active_filters.append("under10")
+    if price_range == "Games under €20":
+        active_filters.append("under20")
+    if price_range == "Games under €40":
+        active_filters.append("under40")
+    if price_range == "Games over €40":
+        active_filters.append("over40")
+        
     search.search(active_filters)
 
 
