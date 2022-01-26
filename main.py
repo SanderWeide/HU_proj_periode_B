@@ -1,19 +1,32 @@
 from GUI_dashboard import dashboard_gui
-import json, threading, time, random, ai
-import search
+import json, threading, time, random, ai, search
 random.seed()
 
 
 def game_genres_filter():
     active_filters = []
+    price_range = dashboard_gui.value_price_menu.get()
+    # price filter
+    if price_range == "Games under €5":
+        active_filters.append("under5")
+    if price_range == "Games under €10":
+        active_filters.append("under10")
+    if price_range == "Games under €20":
+        active_filters.append("under20")
+    if price_range == "Games under €40":
+        active_filters.append("under40")
+    if price_range == "Games over €40":
+        active_filters.append("over40")
+    
+    #catagory filter
     if dashboard_gui.Free_to_Play_option.get():
         active_filters.append("Free to Play")
     if dashboard_gui.Early_Access_option.get():
         active_filters.append("Early Access")
     if dashboard_gui.Action_option.get():
         active_filters.append("Action")
-    if dashboard_gui.Advanture_option.get():
-        active_filters.append("Advanture")
+    if dashboard_gui.Adventure_option.get():
+        active_filters.append("Adventure")
     if dashboard_gui.Casual_option.get():
         active_filters.append("Casual")
     if dashboard_gui.Indie_option.get():

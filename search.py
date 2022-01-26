@@ -13,8 +13,8 @@ def search(active_filters):
         if "Action" in active_filters:
             if "Action" not in i["genres"]:
                 continue
-        if "Advanture" in active_filters:
-            if "Advanture" not in i["genres"]:
+        if "Adventure" in active_filters:
+            if "Adventure" not in i["genres"]:
                 continue
         if "Casual" in active_filters:
             if "Casual" not in i["genres"]:
@@ -41,4 +41,3 @@ def search(active_filters):
             if "Strategy" not in i["genres"]:
                 continue
         temp.append(i)
-        print(temp)

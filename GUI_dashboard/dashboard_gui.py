@@ -116,8 +116,8 @@ Early_Access_option = IntVar()
 Checkbutton(window, text="Early Access", variable=Early_Access_option).place(x=20.0,y=200.0,width=160,height=25)
 Action_option = IntVar()
 Checkbutton(window, text="Action", variable=Action_option).place(x=20.0,y=220.0,width=160,height=25)
-Advanture_option = IntVar()
-Checkbutton(window, text="Advanture", variable=Advanture_option).place(x=20.0,y=240.0,width=160,height=25)
+Adventure_option = IntVar()
+Checkbutton(window, text="Adventure", variable=Adventure_option).place(x=20.0,y=240.0,width=160,height=25)
 Casual_option = IntVar()
 Checkbutton(window, text="Casual", variable=Casual_option).place(x=20.0,y=260.0,width=160,height=25)
 Indie_option = IntVar()
@@ -164,6 +164,7 @@ price_options = [
     'Games under €5',
     'Games under €10',
     'Games under €20',
+    'Games under €40',
     'Games over €40']
 
 price_filter_menu(price_options)
