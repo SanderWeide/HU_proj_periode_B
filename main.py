@@ -1,5 +1,6 @@
 from GUI_dashboard import dashboard_gui
 import json, threading, time, random, ai, search
+from pathlib import Path
 random.seed()
 
 
@@ -53,14 +54,14 @@ dashboard_gui.button_apply_filter.config(command = game_genres_filter)
 
 dashboard_gui.window.mainloop()
 
-def sort_filter():
-    selection = dashboard_gui.value_option_menu.get()
-    if selection == "Date  (new - old)":
-        print("new old")
-    if selection == "Date  (old - new)":
-        print("old new")
-    if selection == "Price (ascending)":
-        print("price asc")
-    if selection == "Price (descending)":
-        print("price des")
+# def sort_filter():
+#     selection = dashboard_gui.value_option_menu.get()
+#     if selection == "Date  (new - old)":
+        
+#     if selection == "Date  (old - new)":
+#         print("old new")
+#     if selection == "Price (ascending)":
+#         print("price asc")
+#     if selection == "Price (descending)":
+#         print("price des")
 
