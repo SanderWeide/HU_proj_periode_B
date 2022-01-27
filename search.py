@@ -1,7 +1,7 @@
 import json
 
 def search(active_filters):
-    temp = []
+    temp = ""
     data = json.load(open("steam.json"))
     for i in data:
         if "Free to Play" in active_filters:
@@ -55,5 +55,12 @@ def search(active_filters):
         if "over40" in active_filters:
             if i["price"] <= 40:
                 continue
-        temp.append(i)
-    print(len(temp))
+        temp += str(i)
+    temp = temp.replace("}{","}, {")
+    temp = temp.replace("\'", "\"")
+    temp = "[" + temp + "]"
+    f = open("temp.json", "w+")
+    f.write(temp)
+
+# def sort_json():
+#     if 
