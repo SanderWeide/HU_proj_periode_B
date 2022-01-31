@@ -5,6 +5,7 @@ Created on Thu Jan 20 14:27:24 2022
 Helperklasse voor de Steam API. A.u.b. niet de functie get_request aanpassen.
 
 @author: Lina Blijleven
+@extended-by: S. Lukken
 """
 
 #%% IMPORTS
@@ -18,6 +19,8 @@ import requests
 
 #%% API Class
 class APIHelper:
+    def __init__(self, apiKey: str):
+        self.APIKey = apiKey
     
     """
     Geef de response in JSON terug voor een GET-verzoek, met optionele parameters.
@@ -58,25 +61,41 @@ class APIHelper:
     
     Returns : json geformatteerde data
     """
-    def get_app_data(self, parameters):
+    def get_app_data(self, appId: int):
     
         # Voer een HTTP GET-verzoek uit
-        return self.get_request("http://store.steampowered.com/api/appdetails/", parameters)
+        return self.get_request("http://store.steampowered.com/api/appdetails/", {
+            "appid": appId
+        })
     
     """
     Hulpfunctie om de achievement rates van een game op te vragen.
     
     Returns: json geformatteerde data
     """
-    def get_app_achievements(self, parameters):
+    def get_app_achievements(self, gameId: int):
         
         # Voer een HTTP GET-verzoek uit
-        return self.get_request("https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/", parameters)
+        return self.get_request("https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/", {
+            "gameid": gameId
+        })
 
     """
     Hulpfunctie om het aantal spelers van een game op te vragen.
     """
-    def get_app_players(self, parameters):
+    def get_app_players(self, appId: int):
         
         # Voer een HTTP GET-verzoek uit
-        return self.get_request("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1", parameters)
+        return self.get_request("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1", {
+            "appid": appId
+        })
+
+    """
+    Helper functie voor het ophalen van de achievement-stats van een steamgebruiker voor een bepaalde SteamApp.
+    """
+    def GetPlayerAchievements(self, appId: int, steamId: int):
+        return self.get_request(f"http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001", {
+            "appid": appId,
+            "key": self.APIKey,
+            "steamid": steamId
+        })

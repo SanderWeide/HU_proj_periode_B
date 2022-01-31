@@ -17,50 +17,35 @@ Geeft je call een <Response [400]>? Kijk dan opnieuw naar de documentatie of je
 URL en parameters kloppen.
 
 @author: Lina Blijleven
+@extended-by: S. Lukken
 """
 
 #%% IMPORTS
 # Importeer de hulpklasse
 import apihelper
 
+# Stel hier je API-key in
+api_key = 'EC890957993F2D5036E82EFF1DD40882'
+
 #%% CALLS
 # Maak een API helper aan
-api = apihelper.APIHelper()
+api = apihelper.APIHelper(api_key)
 
-# Parameters voor het verzoek (zie API-documentatie voor de juiste verplichte parameters)
-parameters = {
-    'appid': 10 
-}
-
-print(api.get_app_data(parameters))
-
-
-# Parameters voor het verzoek (zie API-documentatie voor de juiste verplichte parameters)
-parameters = {
-    'gameid': 440
-}
+print(api.get_app_data(10))
 
 # Vraag de percentages voor de achievements van een game op.
-print(api.get_app_achievements(parameters))
-
-# Parameters voor het verzoek (zie API-documentatie voor de juiste verplichte parameters)
-parameters = {
-    'appid': 440
-}
+print(api.get_app_achievements(440))
 
 # Vraag het aantal spelers voor een game op
-res = api.get_app_players(parameters)
+res = api.get_app_players(440)
 
 # Haal het aantal spelers uit het resultaat
-no_players = res['response']['player_count']
+NumberOfPlayers = res['response']['player_count']
 
 # Print het aantal spelers
-print("Er zijn op het moment {} spelers.".format(no_players))
+print("Er zijn op het moment {} spelers.".format(NumberOfPlayers))
 
 #%% CALLS (met authenticatie)
-    
-# Stel hier je API-key in
-api_key = 'jouw-key-hier'
 
 # Heb je een call waar je authenticatie voor nodig hebt?
 # Je krijgt dan een error response met een code als 401 of 403. 
