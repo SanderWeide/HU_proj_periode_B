@@ -71,7 +71,6 @@ searchButton.place(
 # selectie menu sorteer opties
 def filter_selectie(options):
     global value_option_menu
-    global modnaam
 
     value_option_menu = StringVar(window)
     value_option_menu.set(options[0]) # default value
@@ -85,7 +84,7 @@ def filter_selectie(options):
     )
 
 options = [
-    'Date  (new -old)',
+    'Date  (new - old)',
     'Date  (old - new)',
     'Price (ascending)',
     'Price (descending)']
@@ -93,33 +92,33 @@ options = [
 filter_selectie(options)
 
 #Filter apply knop
-label_filter_apply = Label(window, 
+button_apply_filter = Button(window, 
     text="Apply Filter",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold",
     anchor=E)
-label_filter_apply.place(x=20.0,y=120.0,width=160,height=25)
+button_apply_filter.place(x=20.0,y=120.0,width=160,height=25)
 
 
 #Price options
-label_filter_apply = Label(window, 
-    text="Game genres",
+label_price_options = Label(window, 
+    text="Game category",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold",
     anchor=E)
-label_filter_apply.place(x=20.0,y=155.0,width=160,height=25)
+label_price_options.place(x=20.0,y=155.0,width=160,height=25)
 
 # filter genres
 Free_to_Play_option = IntVar()
 Checkbutton(window, text="Free to Play", variable=Free_to_Play_option).place(x=20.0,y=180.0,width=160,height=25)
 Early_Access_option = IntVar()
 Checkbutton(window, text="Early Access", variable=Early_Access_option).place(x=20.0,y=200.0,width=160,height=25)
-action_option = IntVar()
-Checkbutton(window, text="Action", variable=action_option).place(x=20.0,y=220.0,width=160,height=25)
-Advanture_option = IntVar()
-Checkbutton(window, text="Advanture", variable=Advanture_option).place(x=20.0,y=240.0,width=160,height=25)
+Action_option = IntVar()
+Checkbutton(window, text="Action", variable=Action_option).place(x=20.0,y=220.0,width=160,height=25)
+Adventure_option = IntVar()
+Checkbutton(window, text="Adventure", variable=Adventure_option).place(x=20.0,y=240.0,width=160,height=25)
 Casual_option = IntVar()
 Checkbutton(window, text="Casual", variable=Casual_option).place(x=20.0,y=260.0,width=160,height=25)
 Indie_option = IntVar()
@@ -146,15 +145,40 @@ label_filter_apply = Label(window,
     anchor=E)
 label_filter_apply.place(x=20.0,y=435.0,width=160,height=25)
 
+#prijs filter menu
+def price_filter_menu(price_options):
+    global value_price_menu
+
+    value_price_menu = StringVar(window)
+    value_price_menu.set(price_options[0]) # default value
+    
+    filter_selection_menu = OptionMenu(window, value_price_menu, *price_options,)
+    filter_selection_menu.place(
+        x=20.0,
+        y=460.0,
+        width=160,
+        height=25
+    )
+
+price_options = [
+    'Select price range',
+    'Games under €5',
+    'Games under €10',
+    'Games under €20',
+    'Games under €40',
+    'Games over €40']
+
+price_filter_menu(price_options)
+
 #Prijs filters
-Games_under_5_option = IntVar()
-Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
-Games_under_10_option = IntVar()
-Checkbutton(window, text="Games under €10 ", variable=Games_under_10_option).place(x=20.0,y=480.0,width=160,height=25)
-Games_under_20_option = IntVar()
-Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
-Games_over_40_option = IntVar()
-Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
+# Games_under_5_option = IntVar()
+# Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
+# Games_under_10_option = IntVar()
+# Checkbutton(window, text="Games under €10 ", variable=Games_under_10_option).place(x=20.0,y=480.0,width=160,height=25)
+# Games_under_20_option = IntVar()
+# Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
+# Games_over_40_option = IntVar()
+# Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
 
 # #data veld
 # json_filename = 'test.json'
@@ -318,4 +342,4 @@ for i in range(0,5):
 # 2e scherm AI statistiek
 
 
-window.mainloop()
+#window.mainloop()
