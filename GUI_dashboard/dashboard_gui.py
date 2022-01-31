@@ -90,6 +90,16 @@ options = [
 
 filter_selectie(options)
 
+# sort menu apply knop
+button_apply_sort = Button(window, 
+    text="Sort",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold"
+    )
+button_apply_sort.place(x=1015,y=25.0,width=50,height=25)
+
+
 #Filter apply knop
 button_apply_filter = Button(window, 
     text="Apply Filter",

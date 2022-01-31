@@ -64,3 +64,12 @@ def search(active_filters):
 
 # def sort_json():
 #     if 
+
+# def search_bar():
+#     data = json.load(open("steam.json"))
+#     if data == "":
+       
+#     for i in data: 
+#         if "Free to Play" in active_filters:
+#             if "Free to Play" not in i["genres"]:
+#                 continue

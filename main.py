@@ -48,13 +48,9 @@ def game_genres_filter():
         
     search.search(active_filters)
 
-
-data = json.load(open("steam.json"))
-dashboard_gui.button_apply_filter.config(command = game_genres_filter)
-
-dashboard_gui.window.mainloop()
-
 # def sort_filter():
+#     data = json.load(open("steam.json"))
+
 #     selection = dashboard_gui.value_option_menu.get()
 #     if selection == "Date  (new - old)":
         
@@ -64,4 +60,11 @@ dashboard_gui.window.mainloop()
 #         print("price asc")
 #     if selection == "Price (descending)":
 #         print("price des")
+
+data = json.load(open("steam.json"))
+dashboard_gui.button_apply_filter.config(command = game_genres_filter)
+
+dashboard_gui.window.mainloop()
+
+
 
