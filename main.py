@@ -2,6 +2,7 @@ import json
 import random
 import ai
 import search
+import os
 
 from GUI_dashboard import dashboard_gui
 from tkinter import END
@@ -84,13 +85,42 @@ def game_genres_filter():
     f = open("temp.json", "w+")
     f.write(json.dumps(filteredData))
 
+show_games_min = 0
+show_games_max = 12
 
+dashboard_gui.show_games(data[show_games_min:show_games_max])
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
-
 dashboard_gui.button_apply_sort.config(command = sort_filter)
+def show_games_next():
+    global show_games_min
+    global show_games_max
+    show_games_min += 12
+    show_games_max += 12
+    dashboard_gui.destroy_games()
+    temp = open("temp.json", "r")
+    if temp.read() == "":
+        dashboard_gui.show_games(data[show_games_min:show_games_max])
+    else:
+        dashboard_gui.show_games(temp[show_games_min:show_games_max])
 
+def show_games_back():
+    global show_games_min
+    global show_games_max
+    if show_games_max <= 12:
+        return
+    
+    show_games_min -= 12
+    show_games_max -= 12
+    dashboard_gui.destroy_games()
+    temp = open("temp.json", "r")
+    if temp.read() == "":
+        dashboard_gui.show_games(data[show_games_min:show_games_max])
+    else:
+        dashboard_gui.show_games(temp[show_games_min:show_games_max])
 
+dashboard_gui.button_forward.config(command = show_games_next)
+dashboard_gui.button_back.config(command = show_games_back)
 dashboard_gui.window.mainloop()
 
 
