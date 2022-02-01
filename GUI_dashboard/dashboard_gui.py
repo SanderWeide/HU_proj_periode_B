@@ -181,6 +181,22 @@ price_options = [
 
 price_filter_menu(price_options)
 
+#backwords button
+button_back = Button(window, 
+    text="<-- Back",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+button_back.place(x=300.0,y=650.0,width=160,height=25)
+
+
+#forward button
+button_forward = Button(window, 
+    text="Next -->",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+button_forward.place(x=800.0,y=650.0,width=160,height=25)
 #Prijs filters
 # Games_under_5_option = IntVar()
 # Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
@@ -340,4 +356,4 @@ price_filter_menu(price_options)
 # 2e scherm AI statistiek
 
 
-#window.mainloop()
+window.mainloop()
