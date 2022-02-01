@@ -1,6 +1,6 @@
 import json
 import random
-
+import ai
 import search
 
 from GUI_dashboard import dashboard_gui
@@ -23,6 +23,16 @@ def GetNameParts() -> list[str]:
     nameParts = name.split(' ')
 
     return nameParts
+def sort_filter():
+    selection = dashboard_gui.value_option_menu.get()
+    if selection == "Date  (new - old)":
+        ai.sort_by_age_new()
+    if selection == "Date  (old - new)":
+        ai.sort_by_age_old()
+    if selection == "Price (ascending)":
+        ai.sort_by_price_ascending()
+    if selection == "Price (descending)":
+        ai.sort_by_price_descending()
 
 def game_genres_filter():
     global filteredData
@@ -75,15 +85,10 @@ def game_genres_filter():
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
 
+dashboard_gui.button_apply_sort.config(command = sort_filter)
+
+
 dashboard_gui.window.mainloop()
 
-# def sort_filter():
-#     selection = dashboard_gui.value_option_menu.get()
-#     if selection == "Date  (new - old)":
 
-#     if selection == "Date  (old - new)":
-#         print("old new")
-#     if selection == "Price (ascending)":
-#         print("price asc")
-#     if selection == "Price (descending)":
-#         print("price des")
+
