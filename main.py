@@ -87,10 +87,7 @@ def game_genres_filter():
 
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
-
 dashboard_gui.button_apply_sort.config(command = sort_filter)
-
-
 dashboard_gui.window.mainloop()
 
 
