@@ -8,6 +8,9 @@ from tkinter import END
 
 random.seed()
 data = json.load(open("steam.json"))
+
+ai.clean_temp()
+
 filteredData = data
 
 PriceRangeOptions = {
