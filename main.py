@@ -8,7 +8,9 @@ from GUI_dashboard import dashboard_gui
 from tkinter import END
 
 random.seed()
-data = json.load(open("steam.json"))
+
+with open("steam.json") as f:
+    data = json.load(f)
 
 ai.clean_temp()
 
@@ -40,6 +42,8 @@ def sort_filter():
 
 def game_genres_filter():
     global filteredData
+    global show_games_max
+    global show_games_min
     filteredData = data
 
     active_filters = []
@@ -84,6 +88,10 @@ def game_genres_filter():
 
     f = open("temp.json", "w+")
     f.write(json.dumps(filteredData))
+    f.close()
+    show_games_min = 0
+    show_games_max = 12
+    dashboard_gui.show_games(filteredData[show_games_min:show_games_max])
 
 show_games_min = 0
 show_games_max = 12
@@ -98,11 +106,16 @@ def show_games_next():
     show_games_min += 12
     show_games_max += 12
     dashboard_gui.destroy_games()
-    temp = open("temp.json", "r")
-    if temp.read() == "":
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp == "":
+        print("data next")
         dashboard_gui.show_games(data[show_games_min:show_games_max])
     else:
-        dashboard_gui.show_games(temp[show_games_min:show_games_max])
+        print("temp next")
+        with open("temp.json") as f:
+            skrt = json.load(f)
+        dashboard_gui.show_games(skrt[show_games_min:show_games_max])
 
 def show_games_back():
     global show_games_min
@@ -113,11 +126,16 @@ def show_games_back():
     show_games_min -= 12
     show_games_max -= 12
     dashboard_gui.destroy_games()
-    temp = open("temp.json", "r")
-    if temp.read() == "":
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp == "":
+        print("data prev")
         dashboard_gui.show_games(data[show_games_min:show_games_max])
     else:
-        dashboard_gui.show_games(temp[show_games_min:show_games_max])
+        print("temp prev")
+        with open("temp.json") as f:
+            skrt = json.load(f)
+        dashboard_gui.show_games(skrt[show_games_min:show_games_max])
 
 dashboard_gui.button_forward.config(command = show_games_next)
 dashboard_gui.button_back.config(command = show_games_back)

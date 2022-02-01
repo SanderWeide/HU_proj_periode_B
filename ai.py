@@ -61,24 +61,28 @@ def sort_by_age_new():
     newlist = sorted(data, key=lambda d: d['release_date'], reverse=True)
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
+    f.close()
 
 def sort_by_age_old():
     data = json.load(open("temp.json"))
     newlist = sorted(data, key=lambda d: d['release_date'])
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
+    f.close()
 
 def sort_by_price_ascending():
     data = json.load(open("temp.json"))
     newlist = sorted(data, key=lambda d: d['price'])
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
+    f.close()
 
 def sort_by_price_descending():
     data = json.load(open("temp.json"))
     newlist = sorted(data, key=lambda d: d['price'], reverse=True)
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
+    f.close()
 
 def clean_temp():
     f = open("temp.json", "w").close()
