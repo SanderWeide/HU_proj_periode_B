@@ -197,15 +197,6 @@ button_forward = Button(window,
     bg = "#1b2838",
     font = "Arial 12 bold")
 button_forward.place(x=800.0,y=650.0,width=160,height=25)
-#Prijs filters
-# Games_under_5_option = IntVar()
-# Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
-# Games_under_10_option = IntVar()
-# Checkbutton(window, text="Games under €10 ", variable=Games_under_10_option).place(x=20.0,y=480.0,width=160,height=25)
-# Games_under_20_option = IntVar()
-# Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
-# Games_over_40_option = IntVar()
-# Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
 
 # appid
 # label_appid = Label(window, 
