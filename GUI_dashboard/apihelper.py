@@ -80,3 +80,9 @@ class APIHelper:
         
         # Voer een HTTP GET-verzoek uit
         return self.get_request("https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1", parameters)
+
+
+    def game_info_page(self, parameters):
+        return self.get_request(f"https://store.steampowered.com/api/appdetails?appids={parameters}")
+
+    

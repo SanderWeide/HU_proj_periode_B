@@ -71,3 +71,6 @@ parameters = {
 }
 
 # Geef de parameters mee aan je call
+
+
+# print(api.game_info_page(440))
