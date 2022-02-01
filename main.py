@@ -2,6 +2,7 @@ import json
 import random
 
 import search
+import SnackboxRPCHelper
 
 from GUI_dashboard import dashboard_gui
 from tkinter import END
@@ -9,6 +10,10 @@ from tkinter import END
 random.seed()
 data = json.load(open("steam.json"))
 filteredData = data
+
+SNACKBOX_RPI_URL = 'http://*The IP Address of your RPi*'
+
+snackboxAPI = SnackboxRPCHelper.SnackboxRPCHelper(SNACKBOX_RPI_URL)
 
 PriceRangeOptions = {
     "Games under €5": 5,
@@ -72,8 +77,21 @@ def game_genres_filter():
     f.write(json.dumps(filteredData))
 
 
+def UnlockSnackBox():
+    snackboxAPI.SendUnlockRequest(0)
+    pass
+
+
+def LockSnackBox():
+    snackboxAPI.SendLockRequest()
+    pass
+
+
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
+
+dashboard_gui.LockSnackBoxButton.config(command=LockSnackBox)
+dashboard_gui.UnlockSnackBoxButton.config(command=UnlockSnackBox)
 
 dashboard_gui.window.mainloop()
 

@@ -169,6 +169,16 @@ price_options = [
 
 price_filter_menu(price_options)
 
+# TI SnackBox controle knoppen
+UnlockSnackBoxButton = Button(window, text="Ontgrendel SnackDoos")
+LockSnackBoxButton = Button(window, text="Vergrendel SnackDoos")
+
+UnlockSnackBoxButton.place(x=1050.0, y=25.0,
+                           width=160, height=25)
+
+LockSnackBoxButton.place(x=1050.0, y=55.0,
+                         width=160, height=25)
+
 #Prijs filters
 # Games_under_5_option = IntVar()
 # Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
