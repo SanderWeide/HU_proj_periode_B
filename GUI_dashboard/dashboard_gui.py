@@ -1,9 +1,9 @@
 from pathlib import Path
 from tkinter import *
 
-variableHeight = 50
-relativeYPost = 50
-YTopMargin = 65
+variableHeight = 35
+relativeYPost = 35
+YTopMargin = 120
 
 value_option_menu = ""
 # variableHeight voor de hoogte van de items
@@ -198,101 +198,895 @@ button_forward = Button(window,
     font = "Arial 12 bold")
 button_forward.place(x=800.0,y=650.0,width=160,height=25)
 
-# appid
-# label_appid = Label(window, 
-#     text="app id:",
+
+
+
+
+
+
+
+
+
+
+
+label_name0 = Label(window, 
+    text="Name:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name0.place(
+    x=200,
+    y=relativeYPost*0+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform0 = Label(window, 
+    text="Platform:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform0.place(
+    x=650,
+    y=relativeYPost*0+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release0 = Label(window, 
+    text="Date:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release0.place(
+    x=850,
+    y=relativeYPost*0+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price0 = Label(window, 
+    text="Price:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price0.place(
+    x=950,
+    y=relativeYPost*0+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+label_info0 = Label(window, 
+    text="Info:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_info0.place(
+    x=1015,
+    y=relativeYPost*0+YTopMargin,
+    width=50,
+    height=variableHeight)
+
+
+
+
+label_name1 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name1.place(
+    x=200,
+    y=relativeYPost*1+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform1 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform1.place(
+    x=650,
+    y=relativeYPost*1+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release1 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release1.place(
+    x=850,
+    y=relativeYPost*1+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price1 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price1.place(
+    x=950,
+    y=relativeYPost*1+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game1 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game1.place(x=1015,y=relativeYPost*1+YTopMargin,width=50,height=variableHeight)
+
+
+
+label_name2 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name2.place(
+    x=200,
+    y=relativeYPost*2+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform2 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform2.place(
+    x=650,
+    y=relativeYPost*2+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release2 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release2.place(
+    x=850,
+    y=relativeYPost*2+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price2 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price2.place(
+    x=950,
+    y=relativeYPost*2+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game2 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game2.place(x=1015,y=relativeYPost*2+YTopMargin,width=50,height=variableHeight)
+
+
+
+label_name3 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name3.place(
+    x=200,
+    y=relativeYPost*3+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform3 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform3.place(
+    x=650,
+    y=relativeYPost*3+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release3 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release3.place(
+    x=850,
+    y=relativeYPost*3+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price3 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price3.place(
+    x=950,
+    y=relativeYPost*3+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game3 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game3.place(x=1015,y=relativeYPost*3+YTopMargin,width=50,height=variableHeight)
+
+
+
+
+label_name4 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name4.place(
+    x=200,
+    y=relativeYPost*4+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform4 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform4.place(
+    x=650,
+    y=relativeYPost*4+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release4 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release4.place(
+    x=850,
+    y=relativeYPost*4+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price4 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price4.place(
+    x=950,
+    y=relativeYPost*4+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game4 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game4.place(x=1015,y=relativeYPost*4+YTopMargin,width=50,height=variableHeight)
+
+
+
+
+label_name5 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name5.place(
+    x=200,
+    y=relativeYPost*5+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform5 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform5.place(
+    x=650,
+    y=relativeYPost*5+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release5 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release5.place(
+    x=850,
+    y=relativeYPost*5+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price5 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price5.place(
+    x=950,
+    y=relativeYPost*5+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game5 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game5.place(x=1015,y=relativeYPost*5+YTopMargin,width=50,height=variableHeight)
+
+
+
+label_name6 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name6.place(
+    x=200,
+    y=relativeYPost*6+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform6 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform6.place(
+    x=650,
+    y=relativeYPost*6+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release6 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release6.place(
+    x=850,
+    y=relativeYPost*6+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price6 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price6.place(
+    x=950,
+    y=relativeYPost*6+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game6 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game6.place(x=1015,y=relativeYPost*6+YTopMargin,width=50,height=variableHeight)
+
+
+
+label_name7 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name7.place(
+    x=200,
+    y=relativeYPost*7+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform7 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform7.place(
+    x=650,
+    y=relativeYPost*7+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release7 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release7.place(
+    x=850,
+    y=relativeYPost*7+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price7 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price7.place(
+    x=950,
+    y=relativeYPost*7+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game7 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game7.place(x=1015,y=relativeYPost*7+YTopMargin,width=50,height=variableHeight)
+
+
+label_name8 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name8.place(
+    x=200,
+    y=relativeYPost*8+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform8 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform8.place(
+    x=650,
+    y=relativeYPost*8+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release8 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release8.place(
+    x=850,
+    y=relativeYPost*8+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price8 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price8.place(
+    x=950,
+    y=relativeYPost*8+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game8 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game8.place(x=1015,y=relativeYPost*8+YTopMargin,width=50,height=variableHeight)
+
+
+label_name9 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name9.place(
+    x=200,
+    y=relativeYPost*9+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform9 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform9.place(
+    x=650,
+    y=relativeYPost*9+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release9 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release9.place(
+    x=850,
+    y=relativeYPost*9+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price9 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price9.place(
+    x=950,
+    y=relativeYPost*9+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game9 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game9.place(x=1015,y=relativeYPost*9+YTopMargin,width=50,height=variableHeight)
+
+
+label_name10 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name10.place(
+    x=200,
+    y=relativeYPost*10+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform10 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform10.place(
+    x=650,
+    y=relativeYPost*10+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release10 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release10.place(
+    x=850,
+    y=relativeYPost*10+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price10 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price10.place(
+    x=950,
+    y=relativeYPost*10+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game10 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game10.place(x=1015,y=relativeYPost*10+YTopMargin,width=50,height=variableHeight)
+
+
+label_name11 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_name11.place(
+    x=200,
+    y=relativeYPost*11+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform11 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_platform11.place(
+    x=650,
+    y=relativeYPost*11+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release11 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_release11.place(
+    x=850,
+    y=relativeYPost*11+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price11 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12",
+    anchor=W)
+label_price11.place(
+    x=950,
+    y=relativeYPost*11+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game11 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#313d4b",
+    font = "Arial 12"
+    )
+button_open_game11.place(x=1015,y=relativeYPost*11+YTopMargin,width=50,height=variableHeight)
+
+
+label_name12 = Label(window, 
+    text="Klere lange naam van dit gekke spel",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name12.place(
+    x=200,
+    y=relativeYPost*12+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform12 = Label(window, 
+    text="Windows, Linux, Mac",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform12.place(
+    x=650,
+    y=relativeYPost*12+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release12 = Label(window, 
+    text="2013-11-19",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release12.place(
+    x=850,
+    y=relativeYPost*12+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price12 = Label(window, 
+    text="€69,42",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price12.place(
+    x=950,
+    y=relativeYPost*12+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+button_open_game12 = Button(window, 
+    text="Info",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12"
+    )
+button_open_game12.place(x=1015,y=relativeYPost*12+YTopMargin,width=50,height=variableHeight)
+
+
+
+# label_nameTEMPNUM = Label(window, 
+#     text="Klere lange naam van dit gekke spel",
 #     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_appid.place(
+#     bg = "#313d4b",
+#     font = "Arial 12",
+#     anchor=W)
+# label_nameTEMPNUM.place(
 #     x=200,
-#     y=relativeYPost*0+YTopMargin,
-#     width=250,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=450,
 #     height=variableHeight)
 
-# data_appid = Label(window, 
-#     text="**app id data field**",
+# label_platformTEMPNUM = Label(window, 
+#     text="Windows, Linux, Mac",
 #     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_appid.place(
-#     x=450,
-#     y=relativeYPost*0+YTopMargin,
-#     width=350,
+#     bg = "#313d4b",
+#     font = "Arial 12",
+#     anchor=W)
+# label_platformTEMPNUM.place(
+#     x=650,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=200,
 #     height=variableHeight)
 
-# # name
-# label_name = Label(window, 
-#     text="name:",
+# label_releaseTEMPNUM = Label(window, 
+#     text="2013-11-19",
+#     fg = "#c7d5e0",
+#     bg = "#313d4b",
+#     font = "Arial 12",
+#     anchor=W)
+# label_releaseTEMPNUM.place(
+#     x=850,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=100,
+#     height=variableHeight)
+
+# label_priceTEMPNUM = Label(window, 
+#     text="€69,42",
+#     fg = "#c7d5e0",
+#     bg = "#313d4b",
+#     font = "Arial 12",
+#     anchor=W)
+# label_priceTEMPNUM.place(
+#     x=950,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=65,
+#     height=variableHeight)
+
+# button_open_gameTEMPNUM = Button(window, 
+#     text="Info",
+#     fg = "#c7d5e0",
+#     bg = "#313d4b",
+#     font = "Arial 12"
+#     )
+# button_open_gameTEMPNUM.place(x=1015,y=relativeYPost*TEMPNUM+YTopMargin,width=50,height=variableHeight)
+
+
+
+
+
+
+
+
+# label_nameTEMPNUM = Label(window, 
+#     text="Klere lange naam van dit gekke spel",
 #     fg = "#c7d5e0",
 #     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_name.place(
+#     font = "Arial 12",
+#     anchor=W)
+# label_nameTEMPNUM.place(
 #     x=200,
-#     y=relativeYPost*1+YTopMargin,
-#     width=250,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=450,
 #     height=variableHeight)
 
-# data_name = Label(window, 
-#     text="**name data field**",
+# label_platformTEMPNUM = Label(window, 
+#     text="Windows, Linux, Mac",
 #     fg = "#c7d5e0",
 #     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_name.place(
-#     x=450,
-#     y=relativeYPost*1+YTopMargin,
-#     width=350,
+#     font = "Arial 12",
+#     anchor=W)
+# label_platformTEMPNUM.place(
+#     x=650,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=200,
 #     height=variableHeight)
 
-# # platforms
-# label_platforms = Label(window, 
-#     text="platforms:",
+# label_releaseTEMPNUM = Label(window, 
+#     text="2013-11-19",
 #     fg = "#c7d5e0",
 #     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_platforms.place(
-#     x=200,
-#     y=relativeYPost*2+YTopMargin,
-#     width=250,
+#     font = "Arial 12",
+#     anchor=W)
+# label_releaseTEMPNUM.place(
+#     x=850,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=100,
 #     height=variableHeight)
 
-# data_platforms = Label(window, 
-#     text="**platforms data field**",
+# label_priceTEMPNUM = Label(window, 
+#     text="€69,42",
 #     fg = "#c7d5e0",
 #     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_platforms.place(
-#     x=450,
-#     y=relativeYPost*2+YTopMargin,
-#     width=350,
+#     font = "Arial 12",
+#     anchor=W)
+# label_priceTEMPNUM.place(
+#     x=950,
+#     y=relativeYPost*TEMPNUM+YTopMargin,
+#     width=65,
 #     height=variableHeight)
 
-# # required age
-# label_required_age = Label(window, 
-#     text="required age:",
+# button_open_gameTEMPNUM = Button(window, 
+#     text="Info",
 #     fg = "#c7d5e0",
 #     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_required_age.place(
-#     x=200,
-#     y=relativeYPost*3+YTopMargin,
-#     width=250,
-#     height=variableHeight)
+#     font = "Arial 12"
+#     )
+# button_open_gameTEMPNUM.place(x=1015,y=relativeYPost*TEMPNUM+YTopMargin,width=50,height=variableHeight)
 
-# data_required_age = Label(window, 
-#     text="**required age data field**",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_required_age.place(
-#     x=450,
-#     y=relativeYPost*3+YTopMargin,
-#     width=350,
-#     height=variableHeight)
+
+
+
 
 # #most positive
 # label_most_positive_ratings = Label(window, 
@@ -347,4 +1141,4 @@ button_forward.place(x=800.0,y=650.0,width=160,height=25)
 # 2e scherm AI statistiek
 
 
-#window.mainloop()
+window.mainloop()
