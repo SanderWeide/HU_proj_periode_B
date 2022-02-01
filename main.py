@@ -91,7 +91,6 @@ show_games_max = 12
 dashboard_gui.show_games(data[show_games_min:show_games_max])
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
-
 dashboard_gui.button_apply_sort.config(command = sort_filter)
 def show_games_next():
     global show_games_min
