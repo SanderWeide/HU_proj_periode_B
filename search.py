@@ -43,5 +43,4 @@ def ApplyGenreFilter(data: list[dict], active_filters: list[str]):
 
     return result
 
-# def sort_json():
-#     if 
+

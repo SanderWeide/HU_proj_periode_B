@@ -2,9 +2,9 @@ from pathlib import Path
 from tkinter import *
 import json
 
-variableHeight = 50
-relativeYPost = 50
-YTopMargin = 65
+variableHeight = 35
+relativeYPost = 35
+YTopMargin = 120
 
 value_option_menu = ""
 # variableHeight voor de hoogte van de items
@@ -182,124 +182,219 @@ price_options = [
 
 price_filter_menu(price_options)
 
-#Prijs filters
-# Games_under_5_option = IntVar()
-# Checkbutton(window, text="Games under €5 ", variable=Games_under_5_option).place(x=20.0,y=460.0,width=160,height=25)
-# Games_under_10_option = IntVar()
-# Checkbutton(window, text="Games under €10 ", variable=Games_under_10_option).place(x=20.0,y=480.0,width=160,height=25)
-# Games_under_20_option = IntVar()
-# Checkbutton(window, text="Games under €20", variable=Games_under_20_option).place(x=20.0,y=500.0,width=160,height=25)
-# Games_over_40_option = IntVar()
-# Checkbutton(window, text="Games over €40", variable=Games_over_40_option).place(x=20.0,y=520.0,width=160,height=25)
-
-# #data veld
-# json_filename = 'test.json'
-
-# with open(json_filename, 'r') as inside:
-#     data = json.load(inside)
-
-# data_field = Text(window, state='normal', height=35, width=120)
-# data_field.place(x=200, y=100)
-# data_field.insert('1.0', str(data))
+#backwords button
+button_back = Button(window, 
+    text="<-- Back",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+button_back.place(x=300.0,y=650.0,width=160,height=25)
 
 
-# appid
-# label_appid = Label(window, 
-#     text="app id:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_appid.place(
-#     x=200,
-#     y=relativeYPost*0+YTopMargin,
-#     width=250,
-#     height=variableHeight)
+#forward button
+button_forward = Button(window, 
+    text="Next -->",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+button_forward.place(x=800.0,y=650.0,width=160,height=25)
 
-for i in range(0,5):
-    data_appid = Label(window, 
-        text="**app id data field**",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
-    data_appid.place(
-        x=450,
-        y=relativeYPost*(0+i)+YTopMargin,
-        width=350,
-        height=variableHeight)
 
-# name
-for i in range(0,5):
-    label_name = Label(window, 
-        text="name:",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        anchor=E)
-    label_name.place(
-        x=200,
-        y=relativeYPost*(1+i)+YTopMargin,
-        width=250,
-        height=variableHeight)
 
-# data_name = Label(window, 
-#     text="**name data field**",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_name.place(
-#     x=450,
-#     y=relativeYPost*1+YTopMargin,
-#     width=350,
-#     height=variableHeight)
 
-# # platforms
-# label_platforms = Label(window, 
-#     text="platforms:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_platforms.place(
-#     x=200,
-#     y=relativeYPost*2+YTopMargin,
-#     width=250,
-#     height=variableHeight)
 
-# data_platforms = Label(window, 
-#     text="**platforms data field**",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_platforms.place(
-#     x=450,
-#     y=relativeYPost*2+YTopMargin,
-#     width=350,
-#     height=variableHeight)
 
-# # required age
-# label_required_age = Label(window, 
-#     text="required age:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_required_age.place(
-#     x=200,
-#     y=relativeYPost*3+YTopMargin,
-#     width=250,
-#     height=variableHeight)
 
-# data_required_age = Label(window, 
-#     text="**required age data field**",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# data_required_age.place(
-#     x=450,
-#     y=relativeYPost*3+YTopMargin,
-#     width=350,
-#     height=variableHeight)
+
+
+
+
+
+label_name0 = Label(window, 
+    text="Name:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_name0.place(
+    x=200,
+    y=relativeYPost*0+YTopMargin,
+    width=450,
+    height=variableHeight)
+
+label_platform0 = Label(window, 
+    text="Platform:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_platform0.place(
+    x=650,
+    y=relativeYPost*0+YTopMargin,
+    width=200,
+    height=variableHeight)
+
+label_release0 = Label(window, 
+    text="Date:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_release0.place(
+    x=850,
+    y=relativeYPost*0+YTopMargin,
+    width=100,
+    height=variableHeight)
+
+label_price0 = Label(window, 
+    text="Price:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_price0.place(
+    x=950,
+    y=relativeYPost*0+YTopMargin,
+    width=65,
+    height=variableHeight)
+
+label_info0 = Label(window, 
+    text="Info:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
+label_info0.place(
+    x=1015,
+    y=relativeYPost*0+YTopMargin,
+    width=50,
+    height=variableHeight)
+
+def show_games(gameData):
+        for i in range(1,13): 
+            if i % 2:
+                globals()[f"label_name{i}"] = Label(window, 
+                    text=gameData[i-1]["name"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_name{i}"].place(
+                    x=200,
+                    y=relativeYPost*i+YTopMargin,
+                    width=450,
+                    height=variableHeight)
+
+                globals()[f"label_platform{i}"] = Label(window, 
+                    text=gameData[i-1]["platforms"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_platform{i}"].place(
+                    x=650,
+                    y=relativeYPost*i+YTopMargin,
+                    width=200,
+                    height=variableHeight)
+
+                globals()[f"label_release{i}"] = Label(window, 
+                    text=gameData[i-1]["release_date"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_release{i}"].place(
+                    x=850,
+                    y=relativeYPost*i+YTopMargin,
+                    width=100,
+                    height=variableHeight)
+
+                globals()[f"label_price{i}"] = Label(window, 
+                    text=gameData[i-1]["price"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_price{i}"].place(
+                    x=950,
+                    y=relativeYPost*i+YTopMargin,
+                    width=65,
+                    height=variableHeight)
+
+                globals()[f"button_open_game{i}"] = Button(window, 
+                    text="Info",
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12"
+                    )
+                globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
+            else:
+                globals()[f"label_name{i}"] = Label(window, 
+                    text=gameData[i-1]["name"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_name{i}"].place(
+                    x=200,
+                    y=relativeYPost*i+YTopMargin,
+                    width=450,
+                    height=variableHeight)
+
+                globals()[f"label_platform{i}"] = Label(window, 
+                    text=gameData[i-1]["platforms"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_platform{i}"].place(
+                    x=650,
+                    y=relativeYPost*i+YTopMargin,
+                    width=200,
+                    height=variableHeight)
+
+                globals()[f"label_release{i}"] = Label(window, 
+                    text=gameData[i-1]["release_date"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_release{i}"].place(
+                    x=850,
+                    y=relativeYPost*i+YTopMargin,
+                    width=100,
+                    height=variableHeight)
+
+                globals()[f"label_price{i}"] = Label(window, 
+                    text=gameData[i-1]["price"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_price{i}"].place(
+                    x=950,
+                    y=relativeYPost*i+YTopMargin,
+                    width=65,
+                    height=variableHeight)
+
+                globals()[f"button_open_game{i}"] = Button(window, 
+                    text="Info",
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12"
+                    )
+                globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
+
+def destroy_games():
+    for i in range(1,13): 
+        globals()[f"label_name{i}"].destroy()
+        globals()[f"label_platform{i}"].destroy()
+        globals()[f"label_release{i}"].destroy()
+        globals()[f"label_price{i}"].destroy()
+        globals()[f"button_open_game{i}"].destroy()
+
+
+
 
 # #most positive
 # label_most_positive_ratings = Label(window, 
@@ -354,4 +449,4 @@ for i in range(0,5):
 # 2e scherm AI statistiek
 
 
-#window.mainloop()
+# window.mainloop()

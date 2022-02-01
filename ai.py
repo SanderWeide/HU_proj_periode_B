@@ -80,3 +80,5 @@ def sort_by_price_descending():
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
 
+def clean_temp():
+    f = open("temp.json", "w").close()
