@@ -15,6 +15,24 @@ ai.clean_temp()
 
 filteredData = data
 
+
+
+def game_info_button_command(data):
+    dashboard_gui.button_open_game1.config(command= lambda: print(data[0]["appid"]))
+    dashboard_gui.button_open_game2.config(command= lambda: print(data[1]["appid"]))
+    dashboard_gui.button_open_game3.config(command= lambda: print(data[2]["appid"]))
+    dashboard_gui.button_open_game4.config(command= lambda: print(data[3]["appid"]))
+    dashboard_gui.button_open_game5.config(command= lambda: print(data[4]["appid"]))
+    dashboard_gui.button_open_game6.config(command= lambda: print(data[5]["appid"]))
+    dashboard_gui.button_open_game7.config(command= lambda: print(data[6]["appid"]))
+    dashboard_gui.button_open_game8.config(command= lambda: print(data[7]["appid"]))
+    dashboard_gui.button_open_game9.config(command= lambda: print(data[8]["appid"]))
+    dashboard_gui.button_open_game10.config(command= lambda: print(data[9]["appid"]))
+    dashboard_gui.button_open_game11.config(command= lambda: print(data[10]["appid"]))
+    dashboard_gui.button_open_game12.config(command= lambda: print(data[11]["appid"]))
+
+
+
 PriceRangeOptions = {
     "Games under €5": 5,
     "Games under €10": 10,
@@ -52,6 +70,7 @@ def sort_filter():
         with open("steam.json") as f:
             skrt = json.load(f)
     dashboard_gui.show_games(skrt[show_games_min:show_games_max])
+    game_info_button_command(skrt[show_games_min:show_games_max])
 
 def game_genres_filter():
     global filteredData
@@ -107,11 +126,13 @@ def game_genres_filter():
     show_games_min = 0
     show_games_max = 12
     dashboard_gui.show_games(filteredData[show_games_min:show_games_max])
+    game_info_button_command(filteredData[show_games_min:show_games_max])
     sort_filter()
 
 
 
 dashboard_gui.show_games(data[show_games_min:show_games_max])
+game_info_button_command(data[show_games_min:show_games_max])
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
 dashboard_gui.button_apply_sort.config(command = game_genres_filter)
@@ -125,10 +146,12 @@ def show_games_next():
         temp = f.read()
     if temp == "":
         dashboard_gui.show_games(data[show_games_min:show_games_max])
+        game_info_button_command(data[show_games_min:show_games_max])
     else:
         with open("temp.json") as f:
             skrt = json.load(f)
         dashboard_gui.show_games(skrt[show_games_min:show_games_max])
+        game_info_button_command(skrt[show_games_min:show_games_max])
 
 def show_games_back():
     global show_games_min
@@ -143,10 +166,12 @@ def show_games_back():
         temp = f.read()
     if temp == "":
         dashboard_gui.show_games(data[show_games_min:show_games_max])
+        game_info_button_command(data[show_games_min:show_games_max])
     else:
         with open("temp.json") as f:
             skrt = json.load(f)
         dashboard_gui.show_games(skrt[show_games_min:show_games_max])
+        game_info_button_command(skrt[show_games_min:show_games_max])
 
 dashboard_gui.button_forward.config(command = show_games_next)
 dashboard_gui.button_back.config(command = show_games_back)
