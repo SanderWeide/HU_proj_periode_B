@@ -57,28 +57,56 @@ def review_ratio():
 
 
 def sort_by_age_new():
-    data = json.load(open("temp.json"))
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp != "":
+        with open("temp.json") as f:
+            data = json.load(f)
+    else:
+        with open("steam.json") as f:
+            data = json.load(f)
     newlist = sorted(data, key=lambda d: d['release_date'], reverse=True)
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
     f.close()
 
 def sort_by_age_old():
-    data = json.load(open("temp.json"))
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp != "":
+        with open("temp.json") as f:
+            data = json.load(f)
+    else:
+        with open("steam.json") as f:
+            data = json.load(f)
     newlist = sorted(data, key=lambda d: d['release_date'])
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
     f.close()
 
 def sort_by_price_ascending():
-    data = json.load(open("temp.json"))
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp != "":
+        with open("temp.json") as f:
+            data = json.load(f)
+    else:
+        with open("steam.json") as f:
+            data = json.load(f)
     newlist = sorted(data, key=lambda d: d['price'])
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))
     f.close()
 
 def sort_by_price_descending():
-    data = json.load(open("temp.json"))
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp != "":
+        with open("temp.json") as f:
+            data = json.load(f)
+    else:
+        with open("steam.json") as f:
+            data = json.load(f)
     newlist = sorted(data, key=lambda d: d['price'], reverse=True)
     f = open("temp.json", "w+")
     f.write(json.dumps(newlist))

@@ -1,13 +1,12 @@
 import json
-import random
 import ai
 import search
-import os
 
 from GUI_dashboard import dashboard_gui
 from tkinter import END
 
-random.seed()
+show_games_min = 0
+show_games_max = 12
 
 with open("steam.json") as f:
     data = json.load(f)
@@ -30,6 +29,8 @@ def GetNameParts() -> list[str]:
 
     return nameParts
 def sort_filter():
+    global show_games_max
+    global show_games_min
     selection = dashboard_gui.value_option_menu.get()
     if selection == "Date  (new - old)":
         ai.sort_by_age_new()
@@ -39,6 +40,18 @@ def sort_filter():
         ai.sort_by_price_ascending()
     if selection == "Price (descending)":
         ai.sort_by_price_descending()
+
+    show_games_min = 0
+    show_games_max = 12
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp != "":
+        with open("temp.json") as f:
+            skrt = json.load(f)
+    else:
+        with open("steam.json") as f:
+            skrt = json.load(f)
+    dashboard_gui.show_games(skrt[show_games_min:show_games_max])
 
 def game_genres_filter():
     global filteredData
@@ -86,20 +99,22 @@ def game_genres_filter():
     if len(active_filters) > 0:
         filteredData = search.ApplyGenreFilter(filteredData, active_filters)
 
+    
+
     f = open("temp.json", "w+")
     f.write(json.dumps(filteredData))
     f.close()
     show_games_min = 0
     show_games_max = 12
     dashboard_gui.show_games(filteredData[show_games_min:show_games_max])
+    sort_filter()
 
-show_games_min = 0
-show_games_max = 12
+
 
 dashboard_gui.show_games(data[show_games_min:show_games_max])
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
-dashboard_gui.button_apply_sort.config(command = sort_filter)
+dashboard_gui.button_apply_sort.config(command = game_genres_filter)
 def show_games_next():
     global show_games_min
     global show_games_max
@@ -109,10 +124,8 @@ def show_games_next():
     with open("temp.json") as f:
         temp = f.read()
     if temp == "":
-        print("data next")
         dashboard_gui.show_games(data[show_games_min:show_games_max])
     else:
-        print("temp next")
         with open("temp.json") as f:
             skrt = json.load(f)
         dashboard_gui.show_games(skrt[show_games_min:show_games_max])
@@ -129,10 +142,8 @@ def show_games_back():
     with open("temp.json") as f:
         temp = f.read()
     if temp == "":
-        print("data prev")
         dashboard_gui.show_games(data[show_games_min:show_games_max])
     else:
-        print("temp prev")
         with open("temp.json") as f:
             skrt = json.load(f)
         dashboard_gui.show_games(skrt[show_games_min:show_games_max])
