@@ -5,6 +5,7 @@ variableHeight = 50
 relativeYPost = 50
 YTopMargin = 65
 
+value_option_menu = ""
 # variableHeight voor de hoogte van de items
 # relativeYPost*0+YTopMargin voor y positie, pas de 0 aan naar het hoeveelste item het is
 
@@ -83,6 +84,7 @@ def filter_selectie(options):
     )
 
 options = [
+    'Sort By',
     'Date  (new - old)',
     'Date  (old - new)',
     'Price (ascending)',
