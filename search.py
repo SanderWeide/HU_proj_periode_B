@@ -1,66 +1,47 @@
 import json
 
-def search(active_filters):
-    temp = ""
-    data = json.load(open("steam.json"))
+
+def ApplyPriceFilter(data: list[dict], minPrice: float, maxPrice: float) -> list[dict]:
+    result = []
+    for item in data:
+        itemPrice = item["price"]
+        if itemPrice < maxPrice and itemPrice >= minPrice:
+            result.append(item)
+
+    return result
+
+
+def CheckRequiredFilters(genres: list[str], activeFilters: list[str]) -> bool:
+    for activeFilter in activeFilters:
+        if activeFilter not in genres:
+            return False
+    return True
+
+
+def CheckNameParts(itemName: str, nameParts: list[str]) -> bool:
+    for namePart in nameParts:
+        if namePart.lower() not in itemName.lower():
+            return False
+    return True
+
+
+def ApplyNameFileter(data: list[dict], nameParts: list[str]):
+    result = []
+    for item in data:
+        if CheckNameParts(item["name"], nameParts):
+            result.append(item)
+
+    return result
+
+
+def ApplyGenreFilter(data: list[dict], active_filters: list[str]):
+    result = []
     for i in data:
-        if "Free to Play" in active_filters:
-            if "Free to Play" not in i["genres"]:
-                continue
-        if "Early Access" in active_filters:
-            if "Early Access" not in i["genres"]:
-                continue
-        if "Action" in active_filters:
-            if "Action" not in i["genres"]:
-                continue
-        if "Adventure" in active_filters:
-            if "Adventure" not in i["genres"]:
-                continue
-        if "Casual" in active_filters:
-            if "Casual" not in i["genres"]:
-                continue
-        if "Indie" in active_filters:
-            if "Indie" not in i["genres"]:
-                continue
-        if "Massively Multiplayer" in active_filters:
-            if "Massively Multiplayer" not in i["genres"]:
-                continue
-        if "Racing" in active_filters:
-            if "Racing" not in i["genres"]:
-                continue
-        if "RPG" in active_filters:
-            if "RPG" not in i["genres"]:
-                continue
-        if "Simulation" in active_filters:
-            if "Simulation" not in i["genres"]:
-                continue
-        if "Sports" in active_filters:
-            if "Sports" not in i["genres"]:
-                continue
-        if "Strategy" in active_filters:
-            if "Strategy" not in i["genres"]:
-                continue
-        if "under5" in active_filters:
-            if i["price"] > 5:
-                continue
-        if "under10" in active_filters:
-            if i["price"] > 10:
-                continue
-        if "under20" in active_filters:
-            if i["price"] > 20:
-                continue
-        if "under40" in active_filters:
-            if i["price"] > 40:
-                continue
-        if "over40" in active_filters:
-            if i["price"] <= 40:
-                continue
-        temp += str(i)
-    temp = temp.replace("}{","}, {")
-    temp = temp.replace("\'", "\"")
-    temp = "[" + temp + "]"
-    f = open("temp.json", "w+")
-    f.write(temp)
+        genres = i["genres"]
+        if CheckRequiredFilters(genres, active_filters):
+            result.append(i)
+
+    return result
 
 # def sort_json():
 #     if 

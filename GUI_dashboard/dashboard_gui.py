@@ -6,6 +6,7 @@ variableHeight = 50
 relativeYPost = 50
 YTopMargin = 65
 
+value_option_menu = ""
 # variableHeight voor de hoogte van de items
 # relativeYPost*0+YTopMargin voor y positie, pas de 0 aan naar het hoeveelste item het is
 
@@ -84,12 +85,23 @@ def filter_selectie(options):
     )
 
 options = [
+    'Sort By',
     'Date  (new - old)',
     'Date  (old - new)',
     'Price (ascending)',
     'Price (descending)']
 
 filter_selectie(options)
+
+# sort menu apply knop
+button_apply_sort = Button(window, 
+    text="Sort",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold"
+    )
+button_apply_sort.place(x=1015,y=25.0,width=50,height=25)
+
 
 #Filter apply knop
 button_apply_filter = Button(window, 

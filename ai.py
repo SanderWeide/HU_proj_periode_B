@@ -1,9 +1,20 @@
 import json, threading, time
+import re
 
 data = json.load(open("steam.json"))
 
 def mean(lst):
     return sum(lst)/len(lst)
+
+def rnge(lst):
+    low = min(lst)
+    high = max(lst)
+    return high - low
+
+def var(lst):
+    m = sum(lst) / len(lst)
+    res = sum((i - m)**2 for i in lst) / len(lst)
+    return res
 
 selectie = []
 
@@ -43,3 +54,29 @@ def review_ratio():
             ratio = i["positive_ratings"] / i["negative_ratings"]
             game_name = i["name"]
     return game_name, ratio
+
+
+def sort_by_age_new():
+    data = json.load(open("temp.json"))
+    newlist = sorted(data, key=lambda d: d['release_date'], reverse=True)
+    f = open("temp.json", "w+")
+    f.write(json.dumps(newlist))
+
+def sort_by_age_old():
+    data = json.load(open("temp.json"))
+    newlist = sorted(data, key=lambda d: d['release_date'])
+    f = open("temp.json", "w+")
+    f.write(json.dumps(newlist))
+
+def sort_by_price_ascending():
+    data = json.load(open("temp.json"))
+    newlist = sorted(data, key=lambda d: d['price'])
+    f = open("temp.json", "w+")
+    f.write(json.dumps(newlist))
+
+def sort_by_price_descending():
+    data = json.load(open("temp.json"))
+    newlist = sorted(data, key=lambda d: d['price'], reverse=True)
+    f = open("temp.json", "w+")
+    f.write(json.dumps(newlist))
+
