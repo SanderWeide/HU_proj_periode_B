@@ -5,6 +5,16 @@ data = json.load(open("steam.json"))
 def mean(lst):
     return sum(lst)/len(lst)
 
+def rnge(lst):
+    low = min(lst)
+    high = max(lst)
+    return high - low
+
+def var(lst):
+    m = sum(lst) / len(lst)
+    res = sum((i - m)**2 for i in lst) / len(lst)
+    return res
+
 selectie = []
 
 for i in data:
