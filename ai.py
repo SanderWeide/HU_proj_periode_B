@@ -55,6 +55,42 @@ def review_ratio():
             game_name = i["name"]
     return game_name, ratio
 
+def average_playtime():
+    avg_playtime = 0
+    game_name = ""
+    for i in data:
+        if i["average_playtime"] > avg_playtime:
+            avg_playtime = i["average_playtime"]
+            game_name = i["name"]
+    return game_name, avg_playtime
+
+def rating():
+    rating_position = 0
+    game_name = ""
+    for i in data:
+        if i["positive_ratings"] > rating_position:
+            rating_position +1
+            game_name = i["name"]
+    return rating_position, game_name
+
+def genre():
+    game_genre = ""
+    game_name = ""
+    for i in data:
+        if i["genres"] in data:
+            game_genre = i["genres"]
+            game_name = i["name"]
+    return game_name, game_genre
+
+def game_dev():
+    developer = ""
+    game_name = ""
+    for i in data:
+        if i["developer"] in data:
+            developer = i["developer"]
+            game_name = i["name"]
+    return game_name, developer
+
 
 def sort_by_age_new():
     data = json.load(open("temp.json"))
