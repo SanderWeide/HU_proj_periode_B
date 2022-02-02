@@ -203,11 +203,6 @@ button_apply_filter = Button(window,
 UnlockSnackBoxButton = Button(window, text="Ontgrendel SnackDoos")
 LockSnackBoxButton = Button(window, text="Vergrendel SnackDoos")
 
-UnlockSnackBoxButton.place(x=1050.0, y=25.0,
-                           width=160, height=25)
-
-LockSnackBoxButton.place(x=1050.0, y=55.0,
-                         width=160, height=25)
 
 
 def homescreen():
