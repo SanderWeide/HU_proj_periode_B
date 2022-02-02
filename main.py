@@ -16,51 +16,21 @@ ai.clean_temp()
 
 filteredData = data
 
-def get_game_name(appid):
+def get_game_info(appid):
     with open("steam.json") as f:
         data = json.load(f)
     for i in data:
         if i["appid"] == appid:
-            return i["name"]
+            return i["name"], i["achievements"], i["positive_ratings"], i["negative_ratings"]
     
-    return "NO GAME NAME FOUND"
+    return "GAME NOT FOUND"
 
 
-def get_achievements(appid):
-    with open("steam.json") as f:
-        data = json.load(f)
-    for i in data:
-        if i["appid"] == appid:
-            return i["achievements"]
-    
-    return "NO ACHIEVEMENTS FOUND"
 
-def get_postive_ratings(appid):
-    with open("steam.json") as f:
-        data = json.load(f)
-    for i in data:
-        if i["appid"] == appid:
-            return i["positive_ratings"]
-    
+def get_review_ratio(pos, neg):
+    if pos == 0 or neg == 0: return "***"
+    return str(round(pos/neg)) + "X"
     return "NO RATING FOUND"
-
-def get_negative_ratings(appid):
-    with open("steam.json") as f:
-        data = json.load(f)
-    for i in data:
-        if i["appid"] == appid:
-            return i["negative_ratings"]
-    
-    return "NO RATING FOUND"
-
-# def get_review_ratio(appid):
-#     with open("steam.json") as f:
-#         data = json.load(f)
-#     for i in data:
-#         if i["appid"] == appid:
-#             return i["negative_ratings"]
-    
-#     return "NO RATING FOUND"
 
 
 
@@ -80,12 +50,10 @@ def back_to_gamelist():
 def game_stats(appid):
     dashboard_gui.destroy_homescreen()
     dashboard_gui.destroy_games()
-    game_name = get_game_name(appid)
-    achievements = get_achievements(appid)
-    positive_ratings = get_postive_ratings(appid)
-    negative_ratings = get_negative_ratings(appid)
+    game_info = get_game_info(appid)
+    review_ratio = get_review_ratio(game_info[2], game_info[3])
     dashboard_gui.back_button.config(command=back_to_gamelist)
-    dashboard_gui.game_info_page(appid, game_name, achievements, positive_ratings, negative_ratings)
+    dashboard_gui.game_info_page(appid, game_info[0], game_info[1], game_info[2], game_info[3], review_ratio)
 
 def game_info_button_command(data):
     try:

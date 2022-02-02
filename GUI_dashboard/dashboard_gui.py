@@ -666,7 +666,7 @@ review_ratio_data = Label(window,
     )
 
 
-def game_info_page(appid, game_name):
+def game_info_page(appid, game_name, achievements, positive_ratings, negative_ratings, review_ratio):
 
     back_button.place(x=20.0,
         y=120.0,
@@ -741,6 +741,7 @@ def game_info_page(appid, game_name):
         width=150,
         height=variableHeight)
 
+    achievements_data.config(text=achievements)
     achievements_data.place(
         x=300,
         y=90,
@@ -755,6 +756,7 @@ def game_info_page(appid, game_name):
     height=variableHeight)
 
 
+    positive_ratings_data.config(text=positive_ratings)
     positive_ratings_data.place(
     x=300,
     y=125,
@@ -768,6 +770,7 @@ def game_info_page(appid, game_name):
     width=150,
     height=variableHeight)
 
+    negative_ratings_data.config(text=negative_ratings)
     negative_ratings_data.place(
     x=300,
     y=160,
@@ -782,6 +785,7 @@ def game_info_page(appid, game_name):
     height=variableHeight)
 
 
+    review_ratio_data.config(text=review_ratio)
     review_ratio_data.place(
     x=300,
     y=195,
