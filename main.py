@@ -25,6 +25,16 @@ def get_game_name(appid):
     
     return "NO GAME NAME FOUND"
 
+
+def get_achievements(appid):
+    with open("steam.json") as f:
+        data = json.load(f)
+    for i in data:
+        if i["appid"] == appid:
+            return i["name"]
+    
+    return "NO GAME NAME FOUND"
+
 def get_postive_ratings(appid):
     with open("steam.json") as f:
         data = json.load(f)
