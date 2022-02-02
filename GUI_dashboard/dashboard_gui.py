@@ -618,7 +618,7 @@ achievements_data = Label(window,
  #postive, negative en ration
 #positive_ratings
 positive_ratings_label = Label(window, 
-    text="positive_ratings: ",
+    text="positive ratings: ",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold")
@@ -635,7 +635,7 @@ positive_ratings_data = Label(window,
 #negative_ratings
 
 negative_ratings_label = Label(window, 
-    text="negative_ratings: ",
+    text="negative ratings: ",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold")
@@ -651,7 +651,7 @@ negative_ratings_data = Label(window,
 
 #review_ratio
 review_ratio_label = Label(window, 
-    text="review_ratio: ",
+    text="review ratio: ",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold")
