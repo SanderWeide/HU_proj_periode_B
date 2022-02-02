@@ -52,329 +52,377 @@ steam_logo = canvas.create_image(
     image=steamlogo
 )
 
-# # searchbox
-# searchBox = Text(window,
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12")
-# searchBox.place(
-#     x=200,
-#     y=25,
-#     width=540,
-#     height=25)
 
-# searchButton = Button (window, text="Zoeken")
+# selectie menu sorteer opties
+options = [
+    'Sort By',
+    'Date  (new - old)',
+    'Date  (old - new)',
+    'Price (ascending)',
+    'Price (descending)']
 
-# searchButton.place(
-#     x=740,
-#     y=25,
-#     width=60,
-#     height=25)
+value_option_menu = StringVar(window)
+value_option_menu.set(options[0]) # default value
+filter_selection_menu = OptionMenu(window, value_option_menu, *options,)
 
-# # selectie menu sorteer opties
-# def filter_selectie(options):
-#     global value_option_menu
 
-#     value_option_menu = StringVar(window)
-#     value_option_menu.set(options[0]) # default value
+#Price options
+label_price_options = Label(window, 
+    text="Game category",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
+
+#backwords button
+button_back = Button(window, 
+    text="<-- Back",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
     
-#     filter_selection_menu = OptionMenu(window, value_option_menu, *options,)
-#     filter_selection_menu.place(
-#         x=850.0,
-#         y=25.0,
-#         width=160,
-#         height=25
-#     )
+#forward button
+button_forward = Button(window, 
+    text="Next -->",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
 
-# options = [
-#     'Sort By',
-#     'Date  (new - old)',
-#     'Date  (old - new)',
-#     'Price (ascending)',
-#     'Price (descending)']
+# game list header
+label_name0 = Label(window, 
+    text="Name:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
 
-# filter_selectie(options)
+label_platform0 = Label(window, 
+    text="Platform:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
 
-# # sort menu apply knop
-# button_apply_sort = Button(window, 
-#     text="Sort",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold"
-#     )
-# button_apply_sort.place(x=1015,y=25.0,width=50,height=25)
+label_release0 = Label(window, 
+    text="Date:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
 
+label_price0 = Label(window, 
+    text="Price:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
 
-# #Filter apply knop
-# button_apply_filter = Button(window, 
-#     text="Apply Filter",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# button_apply_filter.place(x=20.0,y=120.0,width=160,height=25)
+label_info0 = Label(window, 
+    text="Info:",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12",
+    anchor=W)
 
+# filter opties
+Free_to_Play_option = IntVar()
+checkbutton_free_to_play = Checkbutton(window, text="Free to Play", variable=Free_to_Play_option)
+Early_Access_option = IntVar()
+checkbutton_early_access_option = Checkbutton(window, text="Early Access", variable=Early_Access_option)
+Action_option = IntVar()
+checkbutton_action_option = Checkbutton(window, text="Action", variable=Action_option)
+Adventure_option = IntVar()
+checkbutton_adventure_option = Checkbutton(window, text="Adventure", variable=Adventure_option)
+Casual_option = IntVar()
+checkbutton_casual_option = Checkbutton(window, text="Casual", variable=Casual_option)
+Indie_option = IntVar()
+checkbutton_indie_option = Checkbutton(window, text="Indie", variable=Indie_option)
+Massively_Multiplayer_option = IntVar()
+checkbutton_massively_multiplayer_option = Checkbutton(window, text="Massively Multiplayer", variable=Massively_Multiplayer_option)
+Racing_option = IntVar()
+checkbutton_racing_option = Checkbutton(window, text="Racing", variable=Racing_option)
+RPG_option = IntVar()
+checkbutton_RPG_option = Checkbutton(window, text="RPG", variable=RPG_option)
+Simulation_option = IntVar()
+checkbutton_simulation_option = Checkbutton(window, text="Simulation", variable=Simulation_option)
+Sports_option = IntVar()
+checkbutton_sports_option = Checkbutton(window, text="Sports", variable=Sports_option)
+Strategy_option = IntVar()
+checkbutton_strategy_option = Checkbutton(window, text="Strategy", variable=Strategy_option)
 
-# #Price options
-# label_price_options = Label(window, 
-#     text="Game category",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_price_options.place(x=20.0,y=155.0,width=160,height=25)
+#Price options
+label_filter_apply = Label(window, 
+    text="Price category",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
 
-# # filter genres
-# Free_to_Play_option = IntVar()
-# Checkbutton(window, text="Free to Play", variable=Free_to_Play_option).place(x=20.0,y=180.0,width=160,height=25)
-# Early_Access_option = IntVar()
-# Checkbutton(window, text="Early Access", variable=Early_Access_option).place(x=20.0,y=200.0,width=160,height=25)
-# Action_option = IntVar()
-# Checkbutton(window, text="Action", variable=Action_option).place(x=20.0,y=220.0,width=160,height=25)
-# Adventure_option = IntVar()
-# Checkbutton(window, text="Adventure", variable=Adventure_option).place(x=20.0,y=240.0,width=160,height=25)
-# Casual_option = IntVar()
-# Checkbutton(window, text="Casual", variable=Casual_option).place(x=20.0,y=260.0,width=160,height=25)
-# Indie_option = IntVar()
-# Checkbutton(window, text="Indie", variable=Indie_option).place(x=20.0,y=280.0,width=160,height=25)
-# Massively_Multiplayer_option = IntVar()
-# Checkbutton(window, text="Massively Multiplayer", variable=Massively_Multiplayer_option).place(x=20.0,y=300.0,width=160,height=25)
-# Racing_option = IntVar()
-# Checkbutton(window, text="Racing", variable=Racing_option).place(x=20.0,y=320.0,width=160,height=25)
-# RPG_option = IntVar()
-# Checkbutton(window, text="RPG", variable=RPG_option).place(x=20.0,y=340.0,width=160,height=25)
-# Simulation_option = IntVar()
-# Checkbutton(window, text="Simulation", variable=Simulation_option).place(x=20.0,y=360.0,width=160,height=25)
-# Sports_option = IntVar()
-# Checkbutton(window, text="Sports", variable=Sports_option).place(x=20.0,y=380.0,width=160,height=25)
-# Strategy_option = IntVar()
-# Checkbutton(window, text="Strategy", variable=Strategy_option).place(x=20.0,y=400.0,width=160,height=25)
+#prijs filter menu
+price_options = [
+    'Select price range',
+    'Games under €5',
+    'Games under €10',
+    'Games under €20',
+    'Games under €40',
+    'Games over €40']
 
-# #Price options
-# label_filter_apply = Label(window, 
-#     text="Price category",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold",
-#     anchor=E)
-# label_filter_apply.place(x=20.0,y=435.0,width=160,height=25)
+value_price_menu = StringVar(window)
+value_price_menu.set(price_options[0]) # default value
 
-# #prijs filter menu
-# def price_filter_menu(price_options):
-#     global value_price_menu
-
-#     value_price_menu = StringVar(window)
-#     value_price_menu.set(price_options[0]) # default value
-    
-#     filter_selection_menu = OptionMenu(window, value_price_menu, *price_options,)
-#     filter_selection_menu.place(
-#         x=20.0,
-#         y=460.0,
-#         width=160,
-#         height=25
-#     )
-
-# price_options = [
-#     'Select price range',
-#     'Games under €5',
-#     'Games under €10',
-#     'Games under €20',
-#     'Games under €40',
-#     'Games over €40']
-
-# price_filter_menu(price_options)
-
-# #backwords button
-# button_back = Button(window, 
-#     text="<-- Back",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# button_back.place(x=300.0,y=650.0,width=160,height=25)
+price_filter_menu = OptionMenu(window, value_price_menu, *price_options,)
 
 
-# #forward button
-# button_forward = Button(window, 
-#     text="Next -->",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12 bold")
-# button_forward.place(x=800.0,y=650.0,width=160,height=25)
+# searchbox
+searchBox = Text(window,
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12")
 
-# label_name0 = Label(window, 
-#     text="Name:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12",
-#     anchor=W)
-# label_name0.place(
-#     x=200,
-#     y=relativeYPost*0+YTopMargin,
-#     width=450,
-#     height=variableHeight)
+# searchbutton
+searchButton = Button (window, text="Zoeken")
 
-# label_platform0 = Label(window, 
-#     text="Platform:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12",
-#     anchor=W)
-# label_platform0.place(
-#     x=650,
-#     y=relativeYPost*0+YTopMargin,
-#     width=200,
-#     height=variableHeight)
+# sort menu apply knop
+button_apply_sort = Button(window, 
+    text="Sort",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold"
+    )
 
-# label_release0 = Label(window, 
-#     text="Date:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12",
-#     anchor=W)
-# label_release0.place(
-#     x=850,
-#     y=relativeYPost*0+YTopMargin,
-#     width=100,
-#     height=variableHeight)
+#Filter apply knop
+button_apply_filter = Button(window, 
+    text="Apply Filter",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
 
-# label_price0 = Label(window, 
-#     text="Price:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12",
-#     anchor=W)
-# label_price0.place(
-#     x=950,
-#     y=relativeYPost*0+YTopMargin,
-#     width=65,
-#     height=variableHeight)
 
-# label_info0 = Label(window, 
-#     text="Info:",
-#     fg = "#c7d5e0",
-#     bg = "#1b2838",
-#     font = "Arial 12",
-#     anchor=W)
-# label_info0.place(
-#     x=1015,
-#     y=relativeYPost*0+YTopMargin,
-#     width=50,
-#     height=variableHeight)
 
-# def show_games(gameData):
-#         for i in range(1,13): 
-#             if i % 2:
-#                 globals()[f"label_name{i}"] = Label(window, 
-#                     text=gameData[i-1]["name"],
-#                     fg = "#c7d5e0",
-#                     bg = "#313d4b",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_name{i}"].place(
-#                     x=200,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=450,
-#                     height=variableHeight)
+def homescreen():
+    # searchbox
+    searchBox.place(
+        x=200,
+        y=25,
+        width=540,
+        height=25)
 
-#                 globals()[f"label_platform{i}"] = Label(window, 
-#                     text=gameData[i-1]["platforms"],
-#                     fg = "#c7d5e0",
-#                     bg = "#313d4b",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_platform{i}"].place(
-#                     x=650,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=200,
-#                     height=variableHeight)
 
-#                 globals()[f"label_release{i}"] = Label(window, 
-#                     text=gameData[i-1]["release_date"],
-#                     fg = "#c7d5e0",
-#                     bg = "#313d4b",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_release{i}"].place(
-#                     x=850,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=100,
-#                     height=variableHeight)
+    # searchbutton
+    searchButton.place(
+        x=740,
+        y=25,
+        width=60,
+        height=25)
 
-#                 globals()[f"label_price{i}"] = Label(window, 
-#                     text=gameData[i-1]["price"],
-#                     fg = "#c7d5e0",
-#                     bg = "#313d4b",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_price{i}"].place(
-#                     x=950,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=65,
-#                     height=variableHeight)
+    # filter
+    # filter_selectie(options)
 
-#                 globals()[f"button_open_game{i}"] = Button(window, 
-#                     text="Info",
-#                     fg = "#c7d5e0",
-#                     bg = "#313d4b",
-#                     font = "Arial 12"
-#                     )
-#                 globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
-#             else:
-#                 globals()[f"label_name{i}"] = Label(window, 
-#                     text=gameData[i-1]["name"],
-#                     fg = "#c7d5e0",
-#                     bg = "#1b2838",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_name{i}"].place(
-#                     x=200,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=450,
-#                     height=variableHeight)
+    # sort menu apply knop
+    button_apply_sort.place(x=1015,
+    y=25.0,
+    width=50,
+    height=25)
 
-#                 globals()[f"label_platform{i}"] = Label(window, 
-#                     text=gameData[i-1]["platforms"],
-#                     fg = "#c7d5e0",
-#                     bg = "#1b2838",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_platform{i}"].place(
-#                     x=650,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=200,
-#                     height=variableHeight)
+    #Filter apply knop
+    button_apply_filter.place(x=20.0,
+    y=120.0,
+    width=160,
+    height=25)
 
-#                 globals()[f"label_release{i}"] = Label(window, 
-#                     text=gameData[i-1]["release_date"],
-#                     fg = "#c7d5e0",
-#                     bg = "#1b2838",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_release{i}"].place(
-#                     x=850,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=100,
-#                     height=variableHeight)
 
-#                 globals()[f"label_price{i}"] = Label(window, 
-#                     text=gameData[i-1]["price"],
-#                     fg = "#c7d5e0",
-#                     bg = "#1b2838",
-#                     font = "Arial 12",
-#                     anchor=W)
-#                 globals()[f"label_price{i}"].place(
-#                     x=950,
-#                     y=relativeYPost*i+YTopMargin,
-#                     width=65,
-#                     height=variableHeight)
+    #Price options
+    label_price_options.place(x=20.0,y=155.0,width=160,height=25)
 
-#                 globals()[f"button_open_game{i}"] = Button(window, 
-#                     text="Info",
-#                     fg = "#c7d5e0",
-#                     bg = "#1b2838",
-#                     font = "Arial 12"
-#                     )
-#                 globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
+    # filter opties
+    checkbutton_free_to_play.place(x=20.0,y=180.0,width=160,height=25)
+    checkbutton_early_access_option.place(x=20.0,y=200.0,width=160,height=25)
+    checkbutton_action_option.place(x=20.0,y=220.0,width=160,height=25)
+    checkbutton_adventure_option.place(x=20.0,y=240.0,width=160,height=25)
+    checkbutton_casual_option.place(x=20.0,y=260.0,width=160,height=25)
+    checkbutton_indie_option.place(x=20.0,y=280.0,width=160,height=25)
+    checkbutton_massively_multiplayer_option.place(x=20.0,y=300.0,width=160,height=25)
+    checkbutton_racing_option.place(x=20.0,y=320.0,width=160,height=25)
+    checkbutton_RPG_option.place(x=20.0,y=340.0,width=160,height=25)
+    checkbutton_simulation_option.place(x=20.0,y=360.0,width=160,height=25)
+    checkbutton_sports_option.place(x=20.0,y=380.0,width=160,height=25)
+    checkbutton_strategy_option.place(x=20.0,y=400.0,width=160,height=25)
+
+    #Price options
+    label_filter_apply.place(x=20.0,y=435.0,width=160,height=25)
+
+    #prijs filter menu
+    price_filter_menu.place(
+        x=20.0,
+        y=460.0,
+        width=160,
+        height=25
+    )
+
+
+    filter_selection_menu.place(
+        x=850.0,
+        y=25.0,
+        width=160,
+        height=25
+    )
+
+    #backwords button
+    button_back.place(x=300.0,y=650.0,width=160,height=25)
+
+
+    #forward button
+    button_forward.place(x=800.0,y=650.0,width=160,height=25)
+
+    # game list header
+    label_name0.place(
+        x=200,
+        y=relativeYPost*0+YTopMargin,
+        width=450,
+        height=variableHeight)
+
+    label_platform0.place(
+        x=650,
+        y=relativeYPost*0+YTopMargin,
+        width=200,
+        height=variableHeight)
+
+    label_release0.place(
+        x=850,
+        y=relativeYPost*0+YTopMargin,
+        width=100,
+        height=variableHeight)
+
+    label_price0.place(
+        x=950,
+        y=relativeYPost*0+YTopMargin,
+        width=65,
+        height=variableHeight)
+
+    label_info0.place(
+        x=1015,
+        y=relativeYPost*0+YTopMargin,
+        width=50,
+        height=variableHeight)
+
+
+def show_games(gameData):
+        for i in range(1,13): 
+            if i % 2:
+                globals()[f"label_name{i}"] = Label(window, 
+                    text=gameData[i-1]["name"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_name{i}"].place(
+                    x=200,
+                    y=relativeYPost*i+YTopMargin,
+                    width=450,
+                    height=variableHeight)
+
+                globals()[f"label_platform{i}"] = Label(window, 
+                    text=gameData[i-1]["platforms"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_platform{i}"].place(
+                    x=650,
+                    y=relativeYPost*i+YTopMargin,
+                    width=200,
+                    height=variableHeight)
+
+                globals()[f"label_release{i}"] = Label(window, 
+                    text=gameData[i-1]["release_date"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_release{i}"].place(
+                    x=850,
+                    y=relativeYPost*i+YTopMargin,
+                    width=100,
+                    height=variableHeight)
+
+                globals()[f"label_price{i}"] = Label(window, 
+                    text=gameData[i-1]["price"],
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_price{i}"].place(
+                    x=950,
+                    y=relativeYPost*i+YTopMargin,
+                    width=65,
+                    height=variableHeight)
+
+                globals()[f"button_open_game{i}"] = Button(window, 
+                    text="Info",
+                    fg = "#c7d5e0",
+                    bg = "#313d4b",
+                    font = "Arial 12"
+                    )
+                globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
+            else:
+                globals()[f"label_name{i}"] = Label(window, 
+                    text=gameData[i-1]["name"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_name{i}"].place(
+                    x=200,
+                    y=relativeYPost*i+YTopMargin,
+                    width=450,
+                    height=variableHeight)
+
+                globals()[f"label_platform{i}"] = Label(window, 
+                    text=gameData[i-1]["platforms"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_platform{i}"].place(
+                    x=650,
+                    y=relativeYPost*i+YTopMargin,
+                    width=200,
+                    height=variableHeight)
+
+                globals()[f"label_release{i}"] = Label(window, 
+                    text=gameData[i-1]["release_date"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_release{i}"].place(
+                    x=850,
+                    y=relativeYPost*i+YTopMargin,
+                    width=100,
+                    height=variableHeight)
+
+                globals()[f"label_price{i}"] = Label(window, 
+                    text=gameData[i-1]["price"],
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12",
+                    anchor=W)
+                globals()[f"label_price{i}"].place(
+                    x=950,
+                    y=relativeYPost*i+YTopMargin,
+                    width=65,
+                    height=variableHeight)
+
+                globals()[f"button_open_game{i}"] = Button(window, 
+                    text="Info",
+                    fg = "#c7d5e0",
+                    bg = "#1b2838",
+                    font = "Arial 12"
+                    )
+                globals()[f"button_open_game{i}"].place(x=1015,y=relativeYPost*i+YTopMargin,width=50,height=variableHeight)
+
+
 
 def destroy_games():
     for i in range(1,13): 
@@ -385,6 +433,64 @@ def destroy_games():
         globals()[f"button_open_game{i}"].destroy()
 
 
+def destroy_homescreen():
+    # searchbox
+    searchBox.place_forget()
+
+    # searchbutton
+    searchButton.place_forget()
+
+    # filter
+    # filter_selectie(options)
+
+    # sort menu apply knop
+    button_apply_sort.place_forget()
+
+    #Filter apply knop
+    button_apply_filter.place_forget()
+
+    #Price options
+    label_price_options.place_forget()
+
+    # filter opties
+    checkbutton_free_to_play.place_forget()
+    checkbutton_early_access_option.place_forget()
+    checkbutton_action_option.place_forget()
+    checkbutton_adventure_option.place_forget()
+    checkbutton_casual_option.place_forget()
+    checkbutton_indie_option.place_forget()
+    checkbutton_massively_multiplayer_option.place_forget()
+    checkbutton_racing_option.place_forget()
+    checkbutton_RPG_option.place_forget()
+    checkbutton_simulation_option.place_forget()
+    checkbutton_sports_option.place_forget()
+    checkbutton_strategy_option.place_forget()
+
+    #Price options
+    label_filter_apply.place_forget()
+
+    #prijs filter menu
+    price_filter_menu.place_forget()
+    
+    #prijs filter menu
+    filter_selection_menu.place_forget()
+
+    #backwords button
+    button_back.place_forget()
+
+    #forward button
+    button_forward.place_forget()
+
+    # game list header
+    label_name0.place_forget()
+
+    label_platform0.place_forget()
+
+    label_release0.place_forget()
+
+    label_price0.place_forget()
+
+    label_info0.place_forget()
 
 
 # #most positive
@@ -446,27 +552,66 @@ def destroy_games():
 #     label_price0.destroy()
 #     button_forward.destroy()
 
-appid=10
-appid_s = "10"
+back_button = Button(window, 
+text="<-- Back",
+fg = "#c7d5e0",
+bg = "#1b2838",
+font = "Arial 12 bold",)
 
-def game_info_page(appid):
-                        
-    gamename_label = Label(window, 
-        text="Game name: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+gamename_label = Label(window, 
+    text="Game name: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gamename_data = Label(window, 
+    text="",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gameplayer_number_label = Label(window, 
+    text="Player count: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gameplayer_number_data = Label(window, 
+    text= "",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+game_info_label = Label(window, 
+    text="Game description: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+game_info_data = Label(window, 
+    text= "",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
+
+
+
+def game_info_page(appid, game_name):
+
+    back_button.place(x=20.0,
+        y=120.0,
+        width=160,
+        height=25)
+
     gamename_label.place(
         x=150,
         y=20,
         width=150,
         height=variableHeight)
 
-    gamename_data = Label(window, 
-        text="Game_name_placeholder",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+    gamename_data.config(text=game_name)
     gamename_data.place(
         x=300,
         y=20,
@@ -485,22 +630,15 @@ def game_info_page(appid):
     no_players = res['response']['player_count']
 
 
-    gameplayer_number_label = Label(window, 
-        text="Player count: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+
     gameplayer_number_label.place(
         x=150,
         y=55,
         width=150,
         height=variableHeight)
 
-    gameplayer_number_data = Label(window, 
-        text= no_players,
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+    gameplayer_number_label.config(text=no_players)
+
     gameplayer_number_data.place(
         x=300,
         y=55,
@@ -510,26 +648,17 @@ def game_info_page(appid):
 
 
     #game info
-    gameinfo = api.game_info_page(appid_s)[appid_s]["data"]['short_description']
+    game_description = api.game_info_page(str(appid))[str(appid)]["data"]['short_description']
+    # print(game_description)
 
-    game_info_label = Label(window, 
-        text="Game description: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
     game_info_label.place(
         x=660,
         y=20,
         width=150,
         height=300)
 
-    game_info_data = Label(window, 
-        text= gameinfo,
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=400
-        )
+    game_info_data.config(text=game_description)
+
     game_info_data.place(
         x=810,
         y=20,
@@ -559,83 +688,25 @@ def game_info_page(appid):
         x=300,
         y=90,
         width=350,
-        height=variableHeight)
+        height=200)
 
-        #positive_ratings
-    positive_ratings_label = Label(window, 
-        text="positive_ratings: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
-    positive_ratings_label.place(
-        x=150,
-        y=125,
-        width=150,
-        height=variableHeight)
+def destroy_game_info_page():
 
-    positive_ratings_data = Label(window, 
-        text= "positive_ratings",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=350
-        )
-    positive_ratings_data.place(
-        x=300,
-        y=125,
-        width=350,
-        height=variableHeight)
-    #negative_ratings
+    back_button.place_forget() 
 
-    negative_ratings_label = Label(window, 
-        text="negative_ratings: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
-    negative_ratings_label.place(
-        x=150,
-        y=160,
-        width=150,
-        height=variableHeight)
+    gamename_label.place_forget()
 
-    negative_ratings_data = Label(window, 
-        text= "negative_ratings_placeholder",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=350
-        )
-    negative_ratings_data.place(
-        x=300,
-        y=160,
-        width=350,
-        height=variableHeight)
+    gamename_data.place_forget() 
 
-    #review_ratio
-    review_ratio_label = Label(window, 
-        text="review_ratio: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
-    review_ratio_label.place(
-        x=150,
-        y=195,
-        width=150,
-        height=variableHeight)
+    gameplayer_number_label.place_forget() 
 
-    review_ratio_data = Label(window, 
-        text= "review_ratio_placeholder",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=350
-        )
-    review_ratio_data.place(
-        x=300,
-        y=195,
-        width=350,
-        height=variableHeight)
+    gameplayer_number_data.place_forget() 
 
-game_info_page(440)
-window.mainloop()
+    game_info_label.place_forget() 
+
+    game_info_data.place_forget() 
+    
+
+# game_info_page(440)
+#window.mainloop()
 
