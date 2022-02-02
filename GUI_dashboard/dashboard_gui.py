@@ -199,8 +199,21 @@ button_apply_filter = Button(window,
     anchor=E)
 
 
+# TI SnackBox controle knoppen
+UnlockSnackBoxButton = Button(window, text="Ontgrendel SnackDoos")
+LockSnackBoxButton = Button(window, text="Vergrendel SnackDoos")
+
+UnlockSnackBoxButton.place(x=1050.0, y=25.0,
+                           width=160, height=25)
+
+LockSnackBoxButton.place(x=1050.0, y=55.0,
+                         width=160, height=25)
+
 
 def homescreen():
+    # TI SnackBox controle knoppen
+    UnlockSnackBoxButton.place(x=1100.0, y=25.0, width=160, height=25)
+    LockSnackBoxButton.place(x=1100.0, y=55.0, width=160, height=25)
     # searchbox
     searchBox.place(
         x=200,
@@ -434,6 +447,10 @@ def destroy_games():
 
 
 def destroy_homescreen():
+    # TI SnackBox controle knoppen
+    UnlockSnackBoxButton.place_forget()
+    LockSnackBoxButton.place_forget()
+
     # searchbox
     searchBox.place_forget()
 
