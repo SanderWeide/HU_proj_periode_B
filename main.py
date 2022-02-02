@@ -15,30 +15,27 @@ ai.clean_temp()
 
 filteredData = data
 
-
+def game_stats(appid):
+    dashboard_gui.destroy_homescreen()
+    dashboard_gui.destroy_games()
 
 def game_info_button_command(data):
-    dashboard_gui.button_open_game1.config(command= lambda: print(data[0]["appid"]))
-    dashboard_gui.button_open_game2.config(command= lambda: print(data[1]["appid"]))
-    dashboard_gui.button_open_game3.config(command= lambda: print(data[2]["appid"]))
-    dashboard_gui.button_open_game4.config(command= lambda: print(data[3]["appid"]))
-    dashboard_gui.button_open_game5.config(command= lambda: print(data[4]["appid"]))
-    dashboard_gui.button_open_game6.config(command= lambda: print(data[5]["appid"]))
-    dashboard_gui.button_open_game7.config(command= lambda: print(data[6]["appid"]))
-    dashboard_gui.button_open_game8.config(command= lambda: print(data[7]["appid"]))
-    dashboard_gui.button_open_game9.config(command= lambda: print(data[8]["appid"]))
-    dashboard_gui.button_open_game10.config(command= lambda: print(data[9]["appid"]))
-    dashboard_gui.button_open_game11.config(command= lambda: print(data[10]["appid"]))
-    dashboard_gui.button_open_game12.config(command= lambda: print(data[11]["appid"]))
+    dashboard_gui.show_games(data)
+    dashboard_gui.button_open_game1.config(command= lambda: game_stats(data[0]["appid"]))
+    dashboard_gui.button_open_game2.config(command= lambda: game_stats(data[1]["appid"]))
+    dashboard_gui.button_open_game3.config(command= lambda: game_stats(data[2]["appid"]))
+    dashboard_gui.button_open_game4.config(command= lambda: game_stats(data[3]["appid"]))
+    dashboard_gui.button_open_game5.config(command= lambda: game_stats(data[4]["appid"]))
+    dashboard_gui.button_open_game6.config(command= lambda: game_stats(data[5]["appid"]))
+    dashboard_gui.button_open_game7.config(command= lambda: game_stats(data[6]["appid"]))
+    dashboard_gui.button_open_game8.config(command= lambda: game_stats(data[7]["appid"]))
+    dashboard_gui.button_open_game9.config(command= lambda: game_stats(data[8]["appid"]))
+    dashboard_gui.button_open_game10.config(command= lambda: game_stats(data[9]["appid"]))
+    dashboard_gui.button_open_game11.config(command= lambda: game_stats(data[10]["appid"]))
+    dashboard_gui.button_open_game12.config(command= lambda: game_stats(data[11]["appid"]))
 
 
 
-PriceRangeOptions = {
-    "Games under €5": 5,
-    "Games under €10": 10,
-    "Games under €20": 20,
-    "Games under €40": 40
-}
 
 def GetNameParts() -> list[str]:
     name: str = dashboard_gui.searchBox.get("1.0", END)
@@ -46,6 +43,7 @@ def GetNameParts() -> list[str]:
     nameParts = name.split(' ')
 
     return nameParts
+
 def sort_filter():
     global show_games_max
     global show_games_min
@@ -69,8 +67,15 @@ def sort_filter():
     else:
         with open("steam.json") as f:
             skrt = json.load(f)
-    dashboard_gui.show_games(skrt[show_games_min:show_games_max])
     game_info_button_command(skrt[show_games_min:show_games_max])
+
+
+PriceRangeOptions = {
+    "Games under €5": 5,
+    "Games under €10": 10,
+    "Games under €20": 20,
+    "Games under €40": 40
+}
 
 def game_genres_filter():
     global filteredData
@@ -108,6 +113,7 @@ def game_genres_filter():
         active_filters.append("Sports")
     if dashboard_gui.Strategy_option.get():
         active_filters.append("Strategy")
+
     # price filter
     if price_range in PriceRangeOptions:
         filteredData = search.ApplyPriceFilter(filteredData, 0, PriceRangeOptions[price_range])
@@ -125,13 +131,11 @@ def game_genres_filter():
     f.close()
     show_games_min = 0
     show_games_max = 12
-    dashboard_gui.show_games(filteredData[show_games_min:show_games_max])
     game_info_button_command(filteredData[show_games_min:show_games_max])
     sort_filter()
 
 
-
-dashboard_gui.show_games(data[show_games_min:show_games_max])
+dashboard_gui.homescreen()
 game_info_button_command(data[show_games_min:show_games_max])
 dashboard_gui.button_apply_filter.config(command=game_genres_filter)
 dashboard_gui.searchButton.config(command=game_genres_filter)
@@ -145,12 +149,10 @@ def show_games_next():
     with open("temp.json") as f:
         temp = f.read()
     if temp == "":
-        dashboard_gui.show_games(data[show_games_min:show_games_max])
         game_info_button_command(data[show_games_min:show_games_max])
     else:
         with open("temp.json") as f:
             skrt = json.load(f)
-        dashboard_gui.show_games(skrt[show_games_min:show_games_max])
         game_info_button_command(skrt[show_games_min:show_games_max])
 
 def show_games_back():
@@ -165,12 +167,10 @@ def show_games_back():
     with open("temp.json") as f:
         temp = f.read()
     if temp == "":
-        dashboard_gui.show_games(data[show_games_min:show_games_max])
         game_info_button_command(data[show_games_min:show_games_max])
     else:
         with open("temp.json") as f:
             skrt = json.load(f)
-        dashboard_gui.show_games(skrt[show_games_min:show_games_max])
         game_info_button_command(skrt[show_games_min:show_games_max])
 
 dashboard_gui.button_forward.config(command = show_games_next)
