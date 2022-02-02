@@ -2,7 +2,7 @@ from pathlib import Path
 from tkinter import *
 import json
 from turtle import clear
-import apihelper
+from GUI_dashboard import apihelper
 
 variableHeight = 35
 relativeYPost = 35
@@ -538,5 +538,5 @@ def game_info_page(appid):
     
 
 game_info_page(440)
-window.mainloop()
+#window.mainloop()
 

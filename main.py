@@ -4,6 +4,7 @@ import ai
 import search
 import os
 
+
 from GUI_dashboard import dashboard_gui
 from tkinter import END
 
