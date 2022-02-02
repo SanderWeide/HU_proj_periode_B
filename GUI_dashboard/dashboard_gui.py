@@ -2,7 +2,7 @@ from pathlib import Path
 from tkinter import *
 import json
 from turtle import clear
-from GUI_dashboard import apihelper
+import apihelper
 
 variableHeight = 35
 relativeYPost = 35
@@ -457,7 +457,7 @@ def game_info_page(appid):
         bg = "#1b2838",
         font = "Arial 12 bold")
     gamename_label.place(
-        x=200,
+        x=150,
         y=20,
         width=150,
         height=variableHeight)
@@ -468,7 +468,7 @@ def game_info_page(appid):
         bg = "#1b2838",
         font = "Arial 12 bold")
     gamename_data.place(
-        x=350,
+        x=300,
         y=20,
         width=350,
         height=variableHeight)
@@ -491,7 +491,7 @@ def game_info_page(appid):
         bg = "#1b2838",
         font = "Arial 12 bold")
     gameplayer_number_label.place(
-        x=200,
+        x=150,
         y=55,
         width=150,
         height=variableHeight)
@@ -502,14 +502,14 @@ def game_info_page(appid):
         bg = "#1b2838",
         font = "Arial 12 bold")
     gameplayer_number_data.place(
-        x=350,
+        x=300,
         y=55,
         width=350,
         height=variableHeight)
 
 
 
-#game info
+    #game info
     gameinfo = api.game_info_page(appid_s)[appid_s]["data"]['short_description']
 
     game_info_label = Label(window, 
@@ -518,25 +518,124 @@ def game_info_page(appid):
         bg = "#1b2838",
         font = "Arial 12 bold")
     game_info_label.place(
-        x=200,
-        y=90,
+        x=660,
+        y=20,
         width=150,
-        height=200)
+        height=300)
 
     game_info_data = Label(window, 
         text= gameinfo,
         fg = "#c7d5e0",
         bg = "#1b2838",
         font = "Arial 12 bold",
-        wraplength=350
+        wraplength=400
         )
     game_info_data.place(
-        x=350,
+        x=810,
+        y=20,
+        width=400,
+        height=300)
+
+    #achievements
+    achievements_label = Label(window, 
+        text="achievements: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    achievements_label.place(
+        x=150,
+        y=90,
+        width=150,
+        height=variableHeight)
+
+    achievements_data = Label(window, 
+        text= "achievements_placeholder",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    achievements_data.place(
+        x=300,
         y=90,
         width=350,
-        height=200)
-    
+        height=variableHeight)
+
+        #positive_ratings
+    positive_ratings_label = Label(window, 
+        text="positive_ratings: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    positive_ratings_label.place(
+        x=150,
+        y=125,
+        width=150,
+        height=variableHeight)
+
+    positive_ratings_data = Label(window, 
+        text= "positive_ratings",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    positive_ratings_data.place(
+        x=300,
+        y=125,
+        width=350,
+        height=variableHeight)
+    #negative_ratings
+
+    negative_ratings_label = Label(window, 
+        text="negative_ratings: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    negative_ratings_label.place(
+        x=150,
+        y=160,
+        width=150,
+        height=variableHeight)
+
+    negative_ratings_data = Label(window, 
+        text= "negative_ratings_placeholder",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    negative_ratings_data.place(
+        x=300,
+        y=160,
+        width=350,
+        height=variableHeight)
+
+    #review_ratio
+    review_ratio_label = Label(window, 
+        text="review_ratio: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    review_ratio_label.place(
+        x=150,
+        y=195,
+        width=150,
+        height=variableHeight)
+
+    review_ratio_data = Label(window, 
+        text= "review_ratio_placeholder",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    review_ratio_data.place(
+        x=300,
+        y=195,
+        width=350,
+        height=variableHeight)
 
 game_info_page(440)
-#window.mainloop()
+window.mainloop()
 
