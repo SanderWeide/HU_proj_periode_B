@@ -46,6 +46,9 @@ def game_stats(appid):
     dashboard_gui.game_info_page(appid, game_name)
 
 def game_info_button_command(data):
+    try:
+        dashboard_gui.destroy_games()
+    except: None
     dashboard_gui.show_games(data)
     dashboard_gui.button_open_game1.config(command= lambda: game_stats(data[0]["appid"]))
     dashboard_gui.button_open_game2.config(command= lambda: game_stats(data[1]["appid"]))
