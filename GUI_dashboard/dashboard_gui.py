@@ -545,12 +545,6 @@ def destroy_homescreen():
 
 # 2e scherm AI statistiek
 
-# def clear_screen():
-#     label_name0.destroy()
-#     label_platform0.destroy()
-#     label_release0.destroy()
-#     label_price0.destroy()
-#     button_forward.destroy()
 
 back_button = Button(window, 
 text="<-- Back",
@@ -596,6 +590,12 @@ game_info_data = Label(window,
     wraplength=350
     )
 
+achievements_label = Label(window, 
+    text="achievements: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
 achievements_data = Label(window, 
     text= "achievements_placeholder",
     fg = "#c7d5e0",
@@ -603,18 +603,62 @@ achievements_data = Label(window,
     font = "Arial 12 bold",
     wraplength=350
     )
-
-achievements_label = Label(window, 
-    text="achievements: ",
+ #postive, negative en ration
+#positive_ratings
+positive_ratings_label = Label(window, 
+    text="positive_ratings: ",
     fg = "#c7d5e0",
     bg = "#1b2838",
     font = "Arial 12 bold")
+
+
+positive_ratings_data = Label(window, 
+    text= "positive_ratings",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
+
+#negative_ratings
+
+negative_ratings_label = Label(window, 
+    text="negative_ratings: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+
+negative_ratings_data = Label(window, 
+    text= "negative_ratings_placeholder",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
+
+#review_ratio
+review_ratio_label = Label(window, 
+    text="review_ratio: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+
+review_ratio_data = Label(window, 
+    text= "review_ratio_placeholder",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
+
 
 def game_info_page(appid, game_name):
 
     back_button.place(x=20.0,
         y=120.0,
-        width=160,
+        width=110,
         height=25)
 
     gamename_label.place(
@@ -649,7 +693,7 @@ def game_info_page(appid, game_name):
         width=150,
         height=variableHeight)
 
-    gameplayer_number_label.config(text=no_players)
+    gameplayer_number_data.config(text=no_players)
 
     gameplayer_number_data.place(
         x=300,
@@ -689,7 +733,48 @@ def game_info_page(appid, game_name):
         x=300,
         y=90,
         width=350,
-        height=200)
+        height=variableHeight)
+    
+    #place postive, negative en ratio
+    positive_ratings_label.place(
+    x=150,
+    y=125,
+    width=150,
+    height=variableHeight)
+
+
+    positive_ratings_data.place(
+    x=300,
+    y=125,
+    width=350,
+    height=variableHeight)
+
+    #negative
+    negative_ratings_label.place(
+    x=150,
+    y=160,
+    width=150,
+    height=variableHeight)
+
+    negative_ratings_data.place(
+    x=300,
+    y=160,
+    width=350,
+    height=variableHeight)
+
+    #ratio
+    review_ratio_label.place(
+    x=150,
+    y=195,
+    width=150,
+    height=variableHeight)
+
+
+    review_ratio_data.place(
+    x=300,
+    y=195,
+    width=350,
+    height=variableHeight)
 
 def destroy_game_info_page():
 
@@ -711,7 +796,17 @@ def destroy_game_info_page():
 
     achievements_data.place_forget() 
 
-    
+    positive_ratings_label.place_forget()
+
+    positive_ratings_data.place_forget()
+
+    negative_ratings_label.place_forget()
+
+    negative_ratings_data.place_forget()
+
+    review_ratio_label.place_forget()
+
+    review_ratio_data.place_forget()
 
 # game_info_page(440)
 #window.mainloop()

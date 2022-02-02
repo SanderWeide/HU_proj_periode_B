@@ -25,6 +25,35 @@ def get_game_name(appid):
     
     return "NO GAME NAME FOUND"
 
+def get_postive_ratings(appid):
+    with open("steam.json") as f:
+        data = json.load(f)
+    for i in data:
+        if i["appid"] == appid:
+            return i["positive_ratings"]
+    
+    return "NO RATING FOUND"
+
+def get_negative_ratings(appid):
+    with open("steam.json") as f:
+        data = json.load(f)
+    for i in data:
+        if i["appid"] == appid:
+            return i["negative_ratings"]
+    
+    return "NO RATING FOUND"
+
+def get_review_ratio(appid):
+    with open("steam.json") as f:
+        data = json.load(f)
+    for i in data:
+        if i["appid"] == appid:
+            return i["negative_ratings"]
+    
+    return "NO RATING FOUND"
+
+
+
 def back_to_gamelist():
     dashboard_gui.destroy_game_info_page()
     dashboard_gui.homescreen()
