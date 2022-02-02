@@ -31,9 +31,9 @@ def get_achievements(appid):
         data = json.load(f)
     for i in data:
         if i["appid"] == appid:
-            return i["name"]
+            return i["achievements"]
     
-    return "NO GAME NAME FOUND"
+    return "NO ACHIEVEMENTS FOUND"
 
 def get_postive_ratings(appid):
     with open("steam.json") as f:
@@ -53,14 +53,14 @@ def get_negative_ratings(appid):
     
     return "NO RATING FOUND"
 
-def get_review_ratio(appid):
-    with open("steam.json") as f:
-        data = json.load(f)
-    for i in data:
-        if i["appid"] == appid:
-            return i["negative_ratings"]
+# def get_review_ratio(appid):
+#     with open("steam.json") as f:
+#         data = json.load(f)
+#     for i in data:
+#         if i["appid"] == appid:
+#             return i["negative_ratings"]
     
-    return "NO RATING FOUND"
+#     return "NO RATING FOUND"
 
 
 
@@ -81,8 +81,11 @@ def game_stats(appid):
     dashboard_gui.destroy_homescreen()
     dashboard_gui.destroy_games()
     game_name = get_game_name(appid)
+    achievements = get_achievements(appid)
+    positive_ratings = get_postive_ratings(appid)
+    negative_ratings = get_negative_ratings(appid)
     dashboard_gui.back_button.config(command=back_to_gamelist)
-    dashboard_gui.game_info_page(appid, game_name)
+    dashboard_gui.game_info_page(appid, game_name, achievements, positive_ratings, negative_ratings)
 
 def game_info_button_command(data):
     try:
