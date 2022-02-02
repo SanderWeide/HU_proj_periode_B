@@ -446,6 +446,8 @@ def destroy_games():
 #     label_price0.destroy()
 #     button_forward.destroy()
 
+appid=10
+appid_s = "10"
 
 def game_info_page(appid):
                         
@@ -505,9 +507,35 @@ def game_info_page(appid):
         width=350,
         height=variableHeight)
 
-    #game info
-    # https://store.steampowered.com/api/appdetails?appids=440
 
+
+#game info
+    gameinfo = api.game_info_page(appid_s)[appid_s]["data"]['short_description']
+
+    game_info_label = Label(window, 
+        text="Game description: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    game_info_label.place(
+        x=200,
+        y=90,
+        width=150,
+        height=200)
+
+    game_info_data = Label(window, 
+        text= gameinfo,
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    game_info_data.place(
+        x=350,
+        y=90,
+        width=350,
+        height=200)
+    
 
 game_info_page(440)
 window.mainloop()
