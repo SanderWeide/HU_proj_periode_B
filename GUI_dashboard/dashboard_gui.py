@@ -2,7 +2,7 @@ from pathlib import Path
 from tkinter import *
 import json
 from turtle import clear
-import apihelper
+from GUI_dashboard import apihelper
 
 variableHeight = 35
 relativeYPost = 35
@@ -596,7 +596,19 @@ game_info_data = Label(window,
     wraplength=350
     )
 
+achievements_data = Label(window, 
+    text= "achievements_placeholder",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
 
+achievements_label = Label(window, 
+    text="achievements: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
 
 def game_info_page(appid, game_name):
 
@@ -666,24 +678,13 @@ def game_info_page(appid, game_name):
         height=300)
 
     #achievements
-    achievements_label = Label(window, 
-        text="achievements: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+
     achievements_label.place(
         x=150,
         y=90,
         width=150,
         height=variableHeight)
 
-    achievements_data = Label(window, 
-        text= "achievements_placeholder",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=350
-        )
     achievements_data.place(
         x=300,
         y=90,
@@ -705,6 +706,11 @@ def destroy_game_info_page():
     game_info_label.place_forget() 
 
     game_info_data.place_forget() 
+
+    achievements_label.place_forget() 
+
+    achievements_data.place_forget() 
+
     
 
 # game_info_page(440)
