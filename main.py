@@ -16,9 +16,34 @@ ai.clean_temp()
 
 filteredData = data
 
+def get_game_name(appid):
+    with open("steam.json") as f:
+        data = json.load(f)
+    for i in data:
+        if i["appid"] == appid:
+            return i["name"]
+    
+    return "NO GAME NAME FOUND"
+
+def back_to_gamelist():
+    dashboard_gui.destroy_game_info_page()
+    dashboard_gui.homescreen()
+    with open("temp.json") as f:
+        temp = f.read()
+    if temp == "":
+        game_info_button_command(data[show_games_min:show_games_max])
+    else:
+        with open("temp.json") as f:
+            skrt = json.load(f)
+        game_info_button_command(skrt[show_games_min:show_games_max])
+    return
+
 def game_stats(appid):
     dashboard_gui.destroy_homescreen()
     dashboard_gui.destroy_games()
+    game_name = get_game_name(appid)
+    dashboard_gui.back_button.config(command=back_to_gamelist)
+    dashboard_gui.game_info_page(appid, game_name)
 
 def game_info_button_command(data):
     dashboard_gui.show_games(data)

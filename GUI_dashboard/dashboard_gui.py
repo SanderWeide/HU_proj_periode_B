@@ -435,62 +435,62 @@ def destroy_games():
 
 def destroy_homescreen():
     # searchbox
-    searchBox.destroy()
+    searchBox.place_forget()
 
     # searchbutton
-    searchButton.destroy()
+    searchButton.place_forget()
 
     # filter
     # filter_selectie(options)
 
     # sort menu apply knop
-    button_apply_sort.destroy()
+    button_apply_sort.place_forget()
 
     #Filter apply knop
-    button_apply_filter.destroy()
+    button_apply_filter.place_forget()
 
     #Price options
-    label_price_options.destroy()
+    label_price_options.place_forget()
 
     # filter opties
-    checkbutton_free_to_play.destroy()
-    checkbutton_early_access_option.destroy()
-    checkbutton_action_option.destroy()
-    checkbutton_adventure_option.destroy()
-    checkbutton_casual_option.destroy()
-    checkbutton_indie_option.destroy()
-    checkbutton_massively_multiplayer_option.destroy()
-    checkbutton_racing_option.destroy()
-    checkbutton_RPG_option.destroy()
-    checkbutton_simulation_option.destroy()
-    checkbutton_sports_option.destroy()
-    checkbutton_strategy_option.destroy()
+    checkbutton_free_to_play.place_forget()
+    checkbutton_early_access_option.place_forget()
+    checkbutton_action_option.place_forget()
+    checkbutton_adventure_option.place_forget()
+    checkbutton_casual_option.place_forget()
+    checkbutton_indie_option.place_forget()
+    checkbutton_massively_multiplayer_option.place_forget()
+    checkbutton_racing_option.place_forget()
+    checkbutton_RPG_option.place_forget()
+    checkbutton_simulation_option.place_forget()
+    checkbutton_sports_option.place_forget()
+    checkbutton_strategy_option.place_forget()
 
     #Price options
-    label_filter_apply.destroy()
+    label_filter_apply.place_forget()
 
     #prijs filter menu
-    price_filter_menu.destroy()
+    price_filter_menu.place_forget()
     
     #prijs filter menu
-    filter_selection_menu.destroy()
+    filter_selection_menu.place_forget()
 
     #backwords button
-    button_back.destroy()
+    button_back.place_forget()
 
     #forward button
-    button_forward.destroy()
+    button_forward.place_forget()
 
     # game list header
-    label_name0.destroy()
+    label_name0.place_forget()
 
-    label_platform0.destroy()
+    label_platform0.place_forget()
 
-    label_release0.destroy()
+    label_release0.place_forget()
 
-    label_price0.destroy()
+    label_price0.place_forget()
 
-    label_info0.destroy()
+    label_info0.place_forget()
 
 
 # #most positive
@@ -552,27 +552,66 @@ def destroy_homescreen():
 #     label_price0.destroy()
 #     button_forward.destroy()
 
-appid=10
-appid_s = "10"
+back_button = Button(window, 
+text="<-- Back",
+fg = "#c7d5e0",
+bg = "#1b2838",
+font = "Arial 12 bold",)
 
-def game_info_page(appid):
-                        
-    gamename_label = Label(window, 
-        text="Game name: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+gamename_label = Label(window, 
+    text="Game name: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gamename_data = Label(window, 
+    text="",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gameplayer_number_label = Label(window, 
+    text="Player count: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+gameplayer_number_data = Label(window, 
+    text= "",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+game_info_label = Label(window, 
+    text="Game description: ",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold")
+
+game_info_data = Label(window, 
+    text= "",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    wraplength=350
+    )
+
+
+
+def game_info_page(appid, game_name):
+
+    back_button.place(x=20.0,
+        y=120.0,
+        width=160,
+        height=25)
+
     gamename_label.place(
         x=200,
         y=20,
         width=150,
         height=variableHeight)
 
-    gamename_data = Label(window, 
-        text="Game_name_placeholder",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+    gamename_data.config(text=game_name)
     gamename_data.place(
         x=350,
         y=20,
@@ -591,22 +630,15 @@ def game_info_page(appid):
     no_players = res['response']['player_count']
 
 
-    gameplayer_number_label = Label(window, 
-        text="Player count: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+
     gameplayer_number_label.place(
         x=200,
         y=55,
         width=150,
         height=variableHeight)
 
-    gameplayer_number_data = Label(window, 
-        text= no_players,
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
+    gameplayer_number_label.config(text=no_players)
+
     gameplayer_number_data.place(
         x=350,
         y=55,
@@ -615,34 +647,41 @@ def game_info_page(appid):
 
 
 
-#game info
-    gameinfo = api.game_info_page(appid_s)[appid_s]["data"]['short_description']
+    #game info
+    game_description = api.game_info_page(str(appid))[str(appid)]["data"]['short_description']
+    # print(game_description)
 
-    game_info_label = Label(window, 
-        text="Game description: ",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold")
     game_info_label.place(
         x=200,
         y=90,
         width=150,
         height=200)
 
-    game_info_data = Label(window, 
-        text= gameinfo,
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        wraplength=350
-        )
+    game_info_data.config(text=game_description)
+
     game_info_data.place(
         x=350,
         y=90,
         width=350,
         height=200)
+
+def destroy_game_info_page():
+
+    back_button.place_forget() 
+
+    gamename_label.place_forget()
+
+    gamename_data.place_forget() 
+
+    gameplayer_number_label.place_forget() 
+
+    gameplayer_number_data.place_forget() 
+
+    game_info_label.place_forget() 
+
+    game_info_data.place_forget() 
     
 
-game_info_page(440)
+# game_info_page(440)
 #window.mainloop()
 
