@@ -51,26 +51,17 @@ steam_logo = canvas.create_image(
 
 
 # selectie menu sorteer opties
-def filter_selectie(options):
-    global value_option_menu
-
-    value_option_menu = StringVar(window)
-    value_option_menu.set(options[0]) # default value
-    
-    filter_selection_menu = OptionMenu(window, value_option_menu, *options,)
-    filter_selection_menu.place(
-        x=850.0,
-        y=25.0,
-        width=160,
-        height=25
-    )
-
 options = [
     'Sort By',
     'Date  (new - old)',
     'Date  (old - new)',
     'Price (ascending)',
     'Price (descending)']
+
+value_option_menu = StringVar(window)
+value_option_menu.set(options[0]) # default value
+filter_selection_menu = OptionMenu(window, value_option_menu, *options,)
+
 
 #Price options
 label_price_options = Label(window, 
@@ -132,35 +123,39 @@ label_info0 = Label(window,
 
 # filter opties
 Free_to_Play_option = IntVar()
+checkbutton_free_to_play = Checkbutton(window, text="Free to Play", variable=Free_to_Play_option)
 Early_Access_option = IntVar()
+checkbutton_early_access_option = Checkbutton(window, text="Early Access", variable=Early_Access_option)
 Action_option = IntVar()
+checkbutton_action_option = Checkbutton(window, text="Action", variable=Action_option)
 Adventure_option = IntVar()
+checkbutton_adventure_option = Checkbutton(window, text="Adventure", variable=Adventure_option)
 Casual_option = IntVar()
+checkbutton_casual_option = Checkbutton(window, text="Casual", variable=Casual_option)
 Indie_option = IntVar()
+checkbutton_indie_option = Checkbutton(window, text="Indie", variable=Indie_option)
 Massively_Multiplayer_option = IntVar()
+checkbutton_massively_multiplayer_option = Checkbutton(window, text="Massively Multiplayer", variable=Massively_Multiplayer_option)
 Racing_option = IntVar()
+checkbutton_racing_option = Checkbutton(window, text="Racing", variable=Racing_option)
 RPG_option = IntVar()
+checkbutton_RPG_option = Checkbutton(window, text="RPG", variable=RPG_option)
 Simulation_option = IntVar()
+checkbutton_simulation_option = Checkbutton(window, text="Simulation", variable=Simulation_option)
 Sports_option = IntVar()
+checkbutton_sports_option = Checkbutton(window, text="Sports", variable=Sports_option)
 Strategy_option = IntVar()
+checkbutton_strategy_option = Checkbutton(window, text="Strategy", variable=Strategy_option)
 
-
+#Price options
+label_filter_apply = Label(window, 
+    text="Price category",
+    fg = "#c7d5e0",
+    bg = "#1b2838",
+    font = "Arial 12 bold",
+    anchor=E)
 
 #prijs filter menu
-def price_filter_menu(price_options):
-    global value_price_menu
-
-    value_price_menu = StringVar(window)
-    value_price_menu.set(price_options[0]) # default value
-    
-    filter_selection_menu = OptionMenu(window, value_price_menu, *price_options,)
-    filter_selection_menu.place(
-        x=20.0,
-        y=460.0,
-        width=160,
-        height=25
-    )
-
 price_options = [
     'Select price range',
     'Games under €5',
@@ -168,6 +163,12 @@ price_options = [
     'Games under €20',
     'Games under €40',
     'Games over €40']
+
+value_price_menu = StringVar(window)
+value_price_menu.set(price_options[0]) # default value
+
+price_filter_menu = OptionMenu(window, value_price_menu, *price_options,)
+
 
 # searchbox
 searchBox = Text(window,
@@ -194,6 +195,8 @@ button_apply_filter = Button(window,
     font = "Arial 12 bold",
     anchor=E)
 
+
+
 def homescreen():
     # searchbox
     searchBox.place(
@@ -211,7 +214,7 @@ def homescreen():
         height=25)
 
     # filter
-    filter_selectie(options)
+    # filter_selectie(options)
 
     # sort menu apply knop
     button_apply_sort.place(x=1015,
@@ -230,30 +233,37 @@ def homescreen():
     label_price_options.place(x=20.0,y=155.0,width=160,height=25)
 
     # filter opties
-    Checkbutton(window, text="Free to Play", variable=Free_to_Play_option).place(x=20.0,y=180.0,width=160,height=25)
-    Checkbutton(window, text="Early Access", variable=Early_Access_option).place(x=20.0,y=200.0,width=160,height=25)
-    Checkbutton(window, text="Action", variable=Action_option).place(x=20.0,y=220.0,width=160,height=25)
-    Checkbutton(window, text="Adventure", variable=Adventure_option).place(x=20.0,y=240.0,width=160,height=25)
-    Checkbutton(window, text="Casual", variable=Casual_option).place(x=20.0,y=260.0,width=160,height=25)
-    Checkbutton(window, text="Indie", variable=Indie_option).place(x=20.0,y=280.0,width=160,height=25)
-    Checkbutton(window, text="Massively Multiplayer", variable=Massively_Multiplayer_option).place(x=20.0,y=300.0,width=160,height=25)
-    Checkbutton(window, text="Racing", variable=Racing_option).place(x=20.0,y=320.0,width=160,height=25)
-    Checkbutton(window, text="RPG", variable=RPG_option).place(x=20.0,y=340.0,width=160,height=25)
-    Checkbutton(window, text="Simulation", variable=Simulation_option).place(x=20.0,y=360.0,width=160,height=25)
-    Checkbutton(window, text="Sports", variable=Sports_option).place(x=20.0,y=380.0,width=160,height=25)
-    Checkbutton(window, text="Strategy", variable=Strategy_option).place(x=20.0,y=400.0,width=160,height=25)
+    checkbutton_free_to_play.place(x=20.0,y=180.0,width=160,height=25)
+    checkbutton_early_access_option.place(x=20.0,y=200.0,width=160,height=25)
+    checkbutton_action_option.place(x=20.0,y=220.0,width=160,height=25)
+    checkbutton_adventure_option.place(x=20.0,y=240.0,width=160,height=25)
+    checkbutton_casual_option.place(x=20.0,y=260.0,width=160,height=25)
+    checkbutton_indie_option.place(x=20.0,y=280.0,width=160,height=25)
+    checkbutton_massively_multiplayer_option.place(x=20.0,y=300.0,width=160,height=25)
+    checkbutton_racing_option.place(x=20.0,y=320.0,width=160,height=25)
+    checkbutton_RPG_option.place(x=20.0,y=340.0,width=160,height=25)
+    checkbutton_simulation_option.place(x=20.0,y=360.0,width=160,height=25)
+    checkbutton_sports_option.place(x=20.0,y=380.0,width=160,height=25)
+    checkbutton_strategy_option.place(x=20.0,y=400.0,width=160,height=25)
 
     #Price options
-    label_filter_apply = Label(window, 
-        text="Price category",
-        fg = "#c7d5e0",
-        bg = "#1b2838",
-        font = "Arial 12 bold",
-        anchor=E)
     label_filter_apply.place(x=20.0,y=435.0,width=160,height=25)
 
     #prijs filter menu
-    price_filter_menu(price_options)
+    price_filter_menu.place(
+        x=20.0,
+        y=460.0,
+        width=160,
+        height=25
+    )
+
+
+    filter_selection_menu.place(
+        x=850.0,
+        y=25.0,
+        width=160,
+        height=25
+    )
 
     #backwords button
     button_back.place(x=300.0,y=650.0,width=160,height=25)
@@ -420,6 +430,64 @@ def destroy_games():
         globals()[f"button_open_game{i}"].destroy()
 
 
+def destroy_homescreen():
+    # searchbox
+    searchBox.destroy()
+
+    # searchbutton
+    searchButton.destroy()
+
+    # filter
+    # filter_selectie(options)
+
+    # sort menu apply knop
+    button_apply_sort.destroy()
+
+    #Filter apply knop
+    button_apply_filter.destroy()
+
+    #Price options
+    label_price_options.destroy()
+
+    # filter opties
+    checkbutton_free_to_play.destroy()
+    checkbutton_early_access_option.destroy()
+    checkbutton_action_option.destroy()
+    checkbutton_adventure_option.destroy()
+    checkbutton_casual_option.destroy()
+    checkbutton_indie_option.destroy()
+    checkbutton_massively_multiplayer_option.destroy()
+    checkbutton_racing_option.destroy()
+    checkbutton_RPG_option.destroy()
+    checkbutton_simulation_option.destroy()
+    checkbutton_sports_option.destroy()
+    checkbutton_strategy_option.destroy()
+
+    #Price options
+    label_filter_apply.destroy()
+
+    #prijs filter menu
+    price_filter_menu.destroy()
+    
+    #prijs filter menu
+    filter_selection_menu.destroy()
+
+    #backwords button
+    button_back.destroy()
+
+    #forward button
+    button_forward.destroy()
+
+    # game list header
+    label_name0.destroy()
+
+    label_platform0.destroy()
+
+    label_release0.destroy()
+
+    label_price0.destroy()
+
+    label_info0.destroy()
 
 
 # #most positive

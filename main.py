@@ -15,22 +15,24 @@ ai.clean_temp()
 
 filteredData = data
 
-
+def game_stats(appid):
+    dashboard_gui.destroy_homescreen()
+    dashboard_gui.destroy_games()
 
 def game_info_button_command(data):
     dashboard_gui.show_games(data)
-    dashboard_gui.button_open_game1.config(command= lambda: print(data[0]["appid"]))
-    dashboard_gui.button_open_game2.config(command= lambda: print(data[1]["appid"]))
-    dashboard_gui.button_open_game3.config(command= lambda: print(data[2]["appid"]))
-    dashboard_gui.button_open_game4.config(command= lambda: print(data[3]["appid"]))
-    dashboard_gui.button_open_game5.config(command= lambda: print(data[4]["appid"]))
-    dashboard_gui.button_open_game6.config(command= lambda: print(data[5]["appid"]))
-    dashboard_gui.button_open_game7.config(command= lambda: print(data[6]["appid"]))
-    dashboard_gui.button_open_game8.config(command= lambda: print(data[7]["appid"]))
-    dashboard_gui.button_open_game9.config(command= lambda: print(data[8]["appid"]))
-    dashboard_gui.button_open_game10.config(command= lambda: print(data[9]["appid"]))
-    dashboard_gui.button_open_game11.config(command= lambda: print(data[10]["appid"]))
-    dashboard_gui.button_open_game12.config(command= lambda: print(data[11]["appid"]))
+    dashboard_gui.button_open_game1.config(command= lambda: game_stats(data[0]["appid"]))
+    dashboard_gui.button_open_game2.config(command= lambda: game_stats(data[1]["appid"]))
+    dashboard_gui.button_open_game3.config(command= lambda: game_stats(data[2]["appid"]))
+    dashboard_gui.button_open_game4.config(command= lambda: game_stats(data[3]["appid"]))
+    dashboard_gui.button_open_game5.config(command= lambda: game_stats(data[4]["appid"]))
+    dashboard_gui.button_open_game6.config(command= lambda: game_stats(data[5]["appid"]))
+    dashboard_gui.button_open_game7.config(command= lambda: game_stats(data[6]["appid"]))
+    dashboard_gui.button_open_game8.config(command= lambda: game_stats(data[7]["appid"]))
+    dashboard_gui.button_open_game9.config(command= lambda: game_stats(data[8]["appid"]))
+    dashboard_gui.button_open_game10.config(command= lambda: game_stats(data[9]["appid"]))
+    dashboard_gui.button_open_game11.config(command= lambda: game_stats(data[10]["appid"]))
+    dashboard_gui.button_open_game12.config(command= lambda: game_stats(data[11]["appid"]))
 
 
 
