@@ -2,6 +2,7 @@ import json
 import ai
 import search
 
+
 from GUI_dashboard import dashboard_gui
 from tkinter import END
 

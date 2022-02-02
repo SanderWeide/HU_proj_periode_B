@@ -32,7 +32,7 @@ parameters = {
     'appid': 10 
 }
 
-print(api.get_app_data(parameters))
+# print(api.get_app_data(parameters))
 
 
 # Parameters voor het verzoek (zie API-documentatie voor de juiste verplichte parameters)
@@ -55,7 +55,7 @@ res = api.get_app_players(parameters)
 no_players = res['response']['player_count']
 
 # Print het aantal spelers
-print("Er zijn op het moment {} spelers.".format(no_players))
+# print("Er zijn op het moment {} spelers.".format(no_players))
 
 #%% CALLS (met authenticatie)
     
@@ -71,3 +71,6 @@ parameters = {
 }
 
 # Geef de parameters mee aan je call
+
+
+#print(api.game_info_page(440)["440"]["data"]['detailed_description'])

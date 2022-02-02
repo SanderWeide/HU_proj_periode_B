@@ -1,5 +1,8 @@
 from pathlib import Path
 from tkinter import *
+import json
+from turtle import clear
+from GUI_dashboard import apihelper
 
 variableHeight = 35
 relativeYPost = 35
@@ -542,5 +545,104 @@ def destroy_homescreen():
 
 # 2e scherm AI statistiek
 
+# def clear_screen():
+#     label_name0.destroy()
+#     label_platform0.destroy()
+#     label_release0.destroy()
+#     label_price0.destroy()
+#     button_forward.destroy()
 
-# window.mainloop()
+appid=10
+appid_s = "10"
+
+def game_info_page(appid):
+                        
+    gamename_label = Label(window, 
+        text="Game name: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    gamename_label.place(
+        x=200,
+        y=20,
+        width=150,
+        height=variableHeight)
+
+    gamename_data = Label(window, 
+        text="Game_name_placeholder",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    gamename_data.place(
+        x=350,
+        y=20,
+        width=350,
+        height=variableHeight)
+
+
+
+    #api helper + call
+    api = apihelper.APIHelper()
+    parameters = {
+        f'appid': {appid}
+    }
+    # Vraag het aantal spelers voor een game op
+    res = api.get_app_players(parameters)
+    no_players = res['response']['player_count']
+
+
+    gameplayer_number_label = Label(window, 
+        text="Player count: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    gameplayer_number_label.place(
+        x=200,
+        y=55,
+        width=150,
+        height=variableHeight)
+
+    gameplayer_number_data = Label(window, 
+        text= no_players,
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    gameplayer_number_data.place(
+        x=350,
+        y=55,
+        width=350,
+        height=variableHeight)
+
+
+
+#game info
+    gameinfo = api.game_info_page(appid_s)[appid_s]["data"]['short_description']
+
+    game_info_label = Label(window, 
+        text="Game description: ",
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold")
+    game_info_label.place(
+        x=200,
+        y=90,
+        width=150,
+        height=200)
+
+    game_info_data = Label(window, 
+        text= gameinfo,
+        fg = "#c7d5e0",
+        bg = "#1b2838",
+        font = "Arial 12 bold",
+        wraplength=350
+        )
+    game_info_data.place(
+        x=350,
+        y=90,
+        width=350,
+        height=200)
+    
+
+game_info_page(440)
+#window.mainloop()
+
